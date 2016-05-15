@@ -34,7 +34,9 @@ body{
 .menuh{
   margin: 10px;
   color: white; 
-  size: 30px;
-  font-size: 10px;
-  color: white;
+  
+}
+footer{
+
+  background: white;
 }
