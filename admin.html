@@ -17,116 +17,145 @@
     
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <style type="text/css">
-        /* make sidebar nav vertical */ 
-        @media (min-width: 768px) {
-          .sidebar-nav .navbar .navbar-collapse {
-            padding: 0;
-            max-height: none;
-        }
-        .sidebar-nav .navbar ul {
-            float: none;
-        }
-        .sidebar-nav .navbar ul:not {
-            display: block;
-        }
-        .sidebar-nav .navbar li {
-            float: none;
-            display: block;
-        }
-        .sidebar-nav .navbar li a {
-            padding-top: 12px;
-            padding-bottom: 12px;
-        }
+</head>
+<style type="text/css">
+
+    #altAlan {
+        position: relative;
+        margin-top: -133px; /* altAlan yuksekliginin eksi degeri */
+        height: 133px;
+        clear:both;
     }
 </style>
-</head>
+<body>
+    
 
-<body style="font-color:white;">
-  <div class="row">
-      <div class="col-sm-3">
-        <div class="sidebar-nav">
-          <div class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                <span class="sr-only">hamburger</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span class="visible-xs navbar-brand">Admin Panel</span>
+
+    <div class="menuh"><a href="#menu-toggle" id="menu-toggle" style="size: 30px;font-size: 30px;color: white;" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></div>
+    <div id="wrapper">
+
+        <div id="sidebar-wrapper">
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html" target="_blank">
+                       <i class="glyphicon glyphicon-resize-ful"> </i>
+                       Sayfayı Görüntüle
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Yazı Ekle</a>
+                </li>
+                <li>
+                    <a href="#">Yazı Düznele</a>
+                </li>
+                <li>
+                    <a href="#">Üyeler</a>
+                </li>
+                <li>
+                    <a href="#">Ayarlar</a>
+                </li>
+                <li>    
+                    <a href="#">Yorumlar</a>
+                </li>
+                <li>    
+                    <a href="">Çıkış</a>
+                </li>
+            </ul>
         </div>
-        <div class="navbar-collapse collapse sidebar-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Yazı Ekle</a></li>
-            <li><a href="#">Yazılar</a></li>
-            <li><a href="#">Ayarlar</a></li>
-            <li><a href="#">Yorumlar <span class="badge">1,118</span></a></li>
-            <li><a href="#">Çıkış</a></li>
-        </ul>
-    </div><!--/.nav-collapse -->
-</div>
-</div>
-</div>
-<div class="col-sm-9">
-<div class="panel panel-default">
-  <div class="panel-body">
-       <h1>Yazı Ekle</h1>
-   <form method="post" action="index.php">
-    <div class="row">
-        <div class="col-lg-11">
+        <!-- /menu bitiş -->
 
-            <form role="form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <h1> Yazı Ekle</h1>
+              <form method="post" action="index.php">
+                <div class="row">
+                    <div class="col-lg-11">
 
-                <div class="form-group">
-                    <label>Başlık</label>
-                    <input class="form-control" name="baslik">
-                </div>
+                        <form role="form">
 
-                <div class="form-group">
-                    <label>İçerik</label>
-                    <textarea class="form-control" name="icerik" rows="-2"></textarea>
-                </div>
+                            <div class="form-group">
+                                <label>Başlık</label>
+                                <input class="form-control" name="baslik">
+                            </div>
 
-                <div class="form-group">
-                    <label>Açıklama</label>
-                    <textarea class="form-control" name="icerik" rows="-2"></textarea>
-                </select>
+                            <div class="form-group">
+                                <label>İçerik</label>
+                                <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Açıklama</label>
+
+                                </select>
+                            </div>
+                        </form>
             </div>
-        </form>
-
-    </div>
-    <div class="col-lg-11">
-
-        <div class="form-group">
-            <label>Etiketler</label>
-            <input name="alt-4" class="form-control" placeholder="Tag">
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Github nedir? Nasıl Kullanılır?</h1>
+                <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
+                <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Github nedir? Nasıl Kullanılır?</h1>
+                <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
+                <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Github nedir? Nasıl Kullanılır?</h1>
+                <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
+                <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Github nedir? Nasıl Kullanılır?</h1>
+                <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
+                <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
+            </div>
         </div>
 
-        <button type="submit" style="float:right;" class="btn btn-default">Kaydet</button>
+        <footer  > <center>
+        <div style="color:white; align:center;  position: relative;margin: auto;">  
+        <p >Posted by: Hege Refsnes</p>
+            <p style="color:white;">Contact information: <a href="mailto:someone@example.com">
+                someone@example.com</a>.</p>
+                </div>
+                </center>
+            </footer> 
+        </div>
+
+
+
+
+
+
+
+
     </div>
-</div>
-
-</form>
-  </div>
-</div>
-</div>
+    <!--son-->
 
 
-
-<script src="js/jquery.js"></script>
-
-
-<script src="js/bootstrap.min.js"></script>
+    <script language="javascript" src="http://is.sitekodlari.com/yukaricik1.js"></script>
+    <script src="js/jquery.js"></script>
 
 
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
+    <script src="js/bootstrap.min.js"></script>
 
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
+
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 
 </body>
 
