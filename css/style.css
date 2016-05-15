@@ -18,7 +18,7 @@
   }
 }
 body{
-  background: #E0E3DA;
+  background: #1F2124;
 }
 #tepe{
   background-color: skyblue;
@@ -30,4 +30,11 @@ body{
 #tepe3{
   background: #1F2124;
   padding: 10px;
+}
+.menuh{
+  margin: 10px;
+  color: white; 
+  size: 30px;
+  font-size: 10px;
+  color: white;
 }
