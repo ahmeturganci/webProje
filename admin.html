@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Yazılımdan Bir Haber - Anasayfa</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+        /* make sidebar nav vertical */ 
+        @media (min-width: 768px) {
+          .sidebar-nav .navbar .navbar-collapse {
+            padding: 0;
+            max-height: none;
+        }
+        .sidebar-nav .navbar ul {
+            float: none;
+        }
+        .sidebar-nav .navbar ul:not {
+            display: block;
+        }
+        .sidebar-nav .navbar li {
+            float: none;
+            display: block;
+        }
+        .sidebar-nav .navbar li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+</style>
+</head>
+
+<body style="font-color:white;">
+  <div class="row">
+      <div class="col-sm-3">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                <span class="sr-only">hamburger</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="visible-xs navbar-brand">Admin Panel</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Yazı Ekle</a></li>
+            <li><a href="#">Yazılar</a></li>
+            <li><a href="#">Ayarlar</a></li>
+            <li><a href="#">Yorumlar <span class="badge">1,118</span></a></li>
+            <li><a href="#">Çıkış</a></li>
+        </ul>
+    </div><!--/.nav-collapse -->
+</div>
+</div>
+</div>
+<div class="col-sm-9">
+<div class="panel panel-default">
+  <div class="panel-body">
+       <h1>Yazı Ekle</h1>
+   <form method="post" action="index.php">
+    <div class="row">
+        <div class="col-lg-11">
+
+            <form role="form">
+
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input class="form-control" name="baslik">
+                </div>
+
+                <div class="form-group">
+                    <label>İçerik</label>
+                    <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                </select>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-lg-11">
+
+        <div class="form-group">
+            <label>Etiketler</label>
+            <input name="alt-4" class="form-control" placeholder="Tag">
+        </div>
+
+        <button type="submit" style="float:right;" class="btn btn-default">Kaydet</button>
+    </div>
+</div>
+
+</form>
+  </div>
+</div>
+</div>
+
+
+
+<script src="js/jquery.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
+
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</body>
+
+</html>
