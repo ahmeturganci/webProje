@@ -20,11 +20,11 @@
 </head>
 
 <body>
-<font style="font-family:Consolas;">
+    <font style="font-family:Consolas;">
 
 
-    <div id="wrapper">
-    <a href="#menu-toggle" id="menu-toggle" style="position:right;right:0;">asd</a>
+     <div id="tepe2"> <a href="#menu-toggle" id="menu-toggle" style="position:right;right:0;color: white; size: 10px; padding:5px;"><span class="glyphicon glyphicon-menu-hamburger"></span></a></div>
+     <div id="wrapper">
 
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -50,20 +50,22 @@
         <!-- /menu bitiş -->
 
         <!-- yazılar -->
-        <div id="page-content-wrapper" >
-            
-                <div class="row" style="margin:5px;">
-                  
-                        <h1>Github nedir? Nasıl Kullanılır?</h1>
-                        <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
-                        <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
+        <div id="page-content-wrapper" style="border:1px;">
+
+            <div class="row" style="margin:5px;">
+
+                <h1>Github nedir? Nasıl Kullanılır?</h1>
+                <p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
+                <p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
                 
             </div>
         </div>
-    
+
+
+
 
     </div>
-    
+   
 
     
     <script src="js/jquery.js"></script>
@@ -73,13 +75,13 @@
 
     
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        alert("menu");
-        $("#wrapper").toggleClass("toggled");
-    });
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+
+            $("#wrapper").toggleClass("toggled");
+        });
     </script>
-</font>
+
 </body>
 
 </html>

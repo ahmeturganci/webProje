@@ -18,8 +18,16 @@
   }
 }
 body{
-  background: #cff09f;
+  background: #E0E3DA;
 }
 #tepe{
   background-color: skyblue;
+}
+#tepe2{
+  background: #1F2124;
+  padding: 10px;
+}
+#tepe3{
+  background: #1F2124;
+  padding: 10px;
 }
