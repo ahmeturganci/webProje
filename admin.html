@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
 
@@ -8,149 +8,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Yazılımdan Bir Haber - Anasayfa</title>
-
-    
+    <title>Yazılımdan Bi Haber </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
-<style type="text/css">
 
-    #altAlan {
-        position: relative;
-        margin-top: -133px; /* altAlan yuksekliginin eksi degeri */
-        height: 133px;
-        clear:both;
-    }
-</style>
 <body>
 
-
-
-    <div class="menuh"><a href="#menu-toggle" id="menu-toggle" style="size: 30px;font-size: 30px;color: white;" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></div>
     <div id="wrapper">
 
-        <div id="sidebar-wrapper">
 
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="index.html" target="_blank">
-                     <i class="glyphicon glyphicon-resize-ful"> </i>
-                     Sayfayı Görüntüle
-                 </a>
-             </li>
-             <li>
-                <a href="#">Yazı Ekle</a>
-            </li>
-            <li>
-                <a href="#">Yazı Düznele</a>
-            </li>
-            <li>
-                <a href="#">Üyeler</a>
-            </li>
-            <li>
-                <a href="#">Ayarlar</a>
-            </li>
-            <li>    
-                <a href="#">Yorumlar</a>
-            </li>
-            <li>    
-                <a href="">Çıkış</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /menu bitiş -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-    <div class="panel panel-default">
-        <div class="panel-body">
-          <h1> Yazı Ekle</h1>
-          <form method="post" action="index.php">
-            <div class="form-group">
-                <label>Başlık</label>
-                <input class="form-control" name="baslik">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
+
             </div>
-            <div class="form-group">
-                <label>İçerik</label>
-                <textarea class="form-control" name="icerik" rows="-2"></textarea>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-info alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <i class="fa fa-info-circle"></i>  <strong>Admin hoşgeldin </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <h1 class="page-header">
+                  Admin Panel
+              </h1>
+              <div class="row">
+                <div class="col-lg-12">
+                    <h1> Yazı Ekle</h1>
+                    <form method="post" action="index.php">
+                        <div class="form-group">
+                            <label>Başlık</label>
+                            <input class="form-control" name="baslik">
+                        </div>
+                        <div class="form-group">
+                            <label>İçerik</label>
+                            <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-primary">Yazı Ekle </button>
+
+
+                </div>
+                
+
             </div>
 
-            <div class="form-group">
-                <label>Açıklama</label>
-                <textarea class="form-control" name="icerik" rows="-2"></textarea>
-            </div>
-        </form>
-        <button type="button" class="btn btn-primary">Yazı Ekle </button>
-    </div>
-</div>
-<div class="panel panel-default">
-        <div class="panel-body">
-          <h1> Yazı Düzenle</h1>
-          Buraya Listede yazıları çekelim ordan şeçilende bi post ekranımı açalım ? 
-        <button type="button" class="btn btn-primary">Yazı Düzenle </button>
-    </div>
-</div>
 
-<div class="panel panel-default">
-        <div class="panel-body">
-          <h1> Üyeler</h1>
-          Buraya Listede yazıları çekelim ordan şeçilende bi post ekranımı açalım ? 
-        <button type="button" class="btn btn-primary">Sil   </button>
-    </div>
-</div>
-<div class="panel panel-default">
-        <div class="panel-body">
-          <h1> Ayarlar</h1>
-         Neyin Ayarı ?  
-        <button type="button" class="btn btn-primary">Kaydet  </button>
-    </div>
-</div>
-<div class="panel panel-default">
-        <div class="panel-body">
-          <h1> Yorumlar</h1>
-         
-        
-    </div>
-</div>
+        </div>
 
- 
- 
+        <footer  >  <center>
+            <div style="color:white; align:center;  position: relative;margin: auto;">  
+                <p >Hazırlayan: megau</p>
+                <p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
+                    megau@gmail.com</a>.</p>
+                </div>
+            </center>
+        </footer> 
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
 
+    </body>
 
-
-</div>
-<footer  > 
-    <center>
-        <div style="color:white; align:center;  position: relative;margin: auto;">  
-            <p >Hazırlayan: megau</p>
-            <p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
-                megau@gmail.com</a>.</p>
-            </div>
-        </center>
-</footer> 
-
-<!--son-->
-
-
-<script language="javascript" src="http://is.sitekodlari.com/yukaricik1.js"></script>
-<script src="js/jquery.js"></script>
-
-
-<script src="js/bootstrap.min.js"></script>
-
-
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
-
-</body>
-
-</html>
+    </html>

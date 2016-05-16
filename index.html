@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
 
@@ -8,137 +8,210 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-	<title>Yazılımdan Bir Haber - Anasayfa</title>
-
-	
+	<title>Yazılımdan Bi Haber </title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-
-	
-	<link href="css/simple-sidebar.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/sb-admin.css" rel="stylesheet">
+	<link href="css/plugins/morris.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
-<style type="text/css">
 
-	#altAlan {
-		position: relative;
-		margin-top: -133px; /* altAlan yuksekliginin eksi degeri */
-		height: 133px;
-		clear:both;
-	}
-</style>
 <body>
-	
 
-
-	<div class="menuh"><a href="#menu-toggle" id="menu-toggle" style="size: 30px;font-size: 30px;color: white;" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></div>
 	<div id="wrapper">
+		
 
-		<div id="sidebar-wrapper">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-			<ul class="sidebar-nav">
-				<li class="sidebar-brand">
-					<a href="#">
-						Yazılımdan Bir Haber
-					</a>
-				</li>
-				<li>
-					<a href="#">Kategoriler</a>
-				</li>
-				<li>
-					<a href="#">Çalışmalar</a>
-				</li>
-				<li>
-					<a href="#">Hakkımızda</a>
-				</li>
-				<li>
-					<a href="#">İletişim</a>
-				</li>
-				<li>	
-					<a href="admin.html">Admin Panel</a>
-				</li>
-			</ul>
-		</div>
-		<!-- /menu bitiş -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
 
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<h1>Github nedir? Nasıl Kullanılır?</h1>
-				<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
-				<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
 			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<h1>Github nedir? Nasıl Kullanılır?</h1>
-				<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
-				<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
-			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<h1>Github nedir? Nasıl Kullanılır?</h1>
-				<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b> <b> 14.05.2016 Saat :</b> 12515</p>
-				<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. <a>Devamını Oku . . . </a></p>
-			</div>
-		</div>
-		<center>	
-			<nav>
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-right top-nav">
+					<li class="dropdown">
+						<a href="#" ><i class="fa fa-facebook"></i></b></a>
 					</li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
+					<li>	
+						<a href="#" ><i class="fa fa-twitter"></i></b></a>
+					</li>
+					<li>	
+						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 				</ul>
-			</nav>
-		</center>
-		<footer  > <center>
-			<div style="color:white; align:center;  position: relative;margin: auto;">	
-				<p >Posted by: Hege Refsnes</p>
-				<p style="color:white;">Contact information: <a href="mailto:someone@example.com">
-					someone@example.com</a>.</p>
+
+				<ul class="nav navbar-nav side-nav">
+					<li class="active">
+						<a href="#"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
+					</li>
+					<li>
+						<a href="#"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
+					</li>
+					<li>
+						<a href="#"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
+					</li>
+					<li>
+						<a href="#"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="alert alert-info alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						<i class="fa fa-info-circle"></i>  <strong>Yazılımdan sende bi haber olmak istiyor isen </strong> Bizi Sosyal medya hesaplarımızdan takibe başla.
+					</div>
 				</div>
-			</center>
-		</footer> 
-	</div>
+			</div>
+			<div class="container-fluid">
+				<h1 class="page-header">
+					Yazılımdan Bir Haber <small>yazılımın içinden birinden haberler</small>
+				</h1>
+				<div class="row">
+					<div class="col-lg-12">
+
+						<h1>Github nedir? Nasıl Kullanılır?</h1>
+						<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+							<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+							<button class="btn btn-primary">Devamını Oku . . .</button>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-lg-12">
+
+							<h1>Github nedir? Nasıl Kullanılır?</h1>
+							<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+								<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+								<button class="btn btn-primary">Devamını Oku . . .</button>
+							</div>
+						</div>	<hr>
+						<div class="row">
+							<div class="col-lg-12">
+
+								<h1>Github nedir? Nasıl Kullanılır?</h1>
+								<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+									<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+									<button class="btn btn-primary">Devamını Oku . . .</button>
+								</div>
+							</div>	<hr>
+							<div class="row">
+								<div class="col-lg-12">
+
+									<h1>Github nedir? Nasıl Kullanılır?</h1>
+									<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+										<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+										<button class="btn btn-primary">Devamını Oku . . .</button>
+									</div>
+								</div>	<hr>
+								<div class="row">
+									<div class="col-lg-12">
+
+										<h1>Github nedir? Nasıl Kullanılır?</h1>
+										<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+											<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+											<button class="btn btn-primary">Devamını Oku . . .</button>
+										</div>
+									</div>	<hr>
+									<div class="row">
+										<div class="col-lg-12">
+
+											<h1>Github nedir? Nasıl Kullanılır?</h1>
+											<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+												<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+												<button class="btn btn-primary">Devamını Oku . . .</button>
+											</div>
+										</div>	<hr>
+										<div class="row">
+											<div class="col-lg-12">
+
+												<h1>Github nedir? Nasıl Kullanılır?</h1>
+												<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+													<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+													<button class="btn btn-primary">Devamını Oku . . .</button>
+												</div>
+											</div>	<hr>
+											<div class="row">
+												<div class="col-lg-12">
+
+													<h1>Github nedir? Nasıl Kullanılır?</h1>
+													<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+														<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+														<button class="btn btn-primary">Devamını Oku . . .</button>
+													</div>
+												</div>	<hr>
+												<div class="row">
+													<div class="col-lg-12">
+
+														<h1>Github nedir? Nasıl Kullanılır?</h1>
+														<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+															<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+															<button class="btn btn-primary">Devamını Oku . . .</button>
+														</div>
+													</div>	<hr>
+													<div class="row">
+														<div class="col-lg-12">
+
+															<h1>Github nedir? Nasıl Kullanılır?</h1>
+															<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+																<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz.</p>
+																<button class="btn btn-primary">Devamını Oku . . .</button>
+															</div>
+														</div>
 
 
 
 
 
+													</div>
 
 
-
-</div>
-<!--son-->
+												</div>
 
 
-<script language="javascript" src="http://is.sitekodlari.com/yukaricik1.js"></script>
-<script src="js/jquery.js"></script>
+											</div>
+											<center>
+												<nav>
+													<ul class="pagination">
+														<li>
+															<a href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<li><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li><a href="#">4</a></li>
+														<li><a href="#">5</a></li>
+														<li>
+															<a href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
+											</center>
+											<footer  >  <center>
+												<div style="color:white; align:center;  position: relative;margin: auto;">  
+													<p >Hazırlayan: megau</p>
+													<p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
+														megau@gmail.com</a>.</p>
+													</div>
+												</center>
+											</footer> 
+
+											<script src="js/jquery.js"></script>
+											<script src="js/bootstrap.min.js"></script>
 
 
-<script src="js/bootstrap.min.js"></script>
+										</body>
 
-
-<script>
-	$("#menu-toggle").click(function(e) {
-		e.preventDefault();
-
-		$("#wrapper").toggleClass("toggled");
-	});
-</script>
-
-</body>
-
-</html>
+										</html>
