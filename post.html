@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>haber</title>
+
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	
+	<link href="css/simple-sidebar.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	
+
+
+	<div class="menuh"><a href="#menu-toggle" id="menu-toggle" style="size: 30px;font-size: 30px;color: white;" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></div>
+	<div id="wrapper">
+
+		<div id="sidebar-wrapper">
+
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#">
+						Yazılımdan Bir Haber
+					</a>
+				</li>
+				<li>
+					<a href="#">Kategoriler</a>
+				</li>
+				<li>
+					<a href="#">Çalışmalar</a>
+				</li>
+				<li>
+					<a href="#">Hakkımızda</a>
+				</li>
+				<li>
+					<a href="#">İletişim</a>
+				</li>
+				<li>	
+					<a href="admin.html">Admin Panel</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /menu bitiş -->
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1>Github nedir? Nasıl Kullanılır?</h1>
+				<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+					<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. 
+						Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Git ve Github kullanarak geliştirdiğiniz bir projeye farklı konumlardan farklı kişiler ekleyebilir, onlara görevler atayabilir ve yaptıkları işleri kontrol edebilirsiniz.
+
+						Takım çalışması ve bireysel çalışmalarda etkin bir şekilde kullanılan yeni proje oluşturmak, projeye kişiler eklemek, kişilere görevler atamak, kişilerin analizlerini tutmak, ana projeyi değiştirmeden yeni kodları test etmek için dallar (branch) oluşturmak böylelikle çok daha kolay bir hale geliyor. Versiyon kontrollerini yapmak için release işlemlerini anlamak ve bir versiyon çıktığımızda, örneğin 1.0.0 ve çok fazla versiyon çıkıyorsak, bir süre sonra istediğimiz bir versiyona dönüp ordaki dosyada ve kodlarda değişiklikler yapabilir veya istediğiniz kod güncellemelerini de pratik bir şekilde yapabiliriz.
+
+						Yazılım Ekibinizi Daha Kolay Yönetin
+
+						Tüm büyük projelerde kullanılan Github ile, sizler de açık kaynak veya kapalı kaynak olarak ekibinizin ve projenizin yönetimini çok rahat yapabilirsiniz.
+
+						Sisteminize Git indirerek dilerseniz masaüstü uygulamasından veya bilgisayarınızın konsolundan projenizi yönetebilir, kimlerin ne kadar kodlama yaptığı, ne kadar süre çalıştığı, ne kadar commit (görev sonrası açıklama) mesajı yazdığı gibi tüm detayları yönetebileceğiniz eşsiz bir web platformudur.
+
+						Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. </p>
+						<img src="	http://resim.sanalkurs.net/uploads/Screen_Shot_2014_02_05_at_162938.jpg">
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h1> Yazı Ekle</h1>
+						<form method="post" action="index.php">
+							<div class="form-group">
+								<label>Başlık</label>
+								<input class="form-control" name="baslik">
+							</div>
+							<div class="form-group">
+							<label>Mail</label>
+							<input class="form-control" name="baslik">
+							</div>
+
+							<div class="form-group">
+								<label>Yorum</label>
+								<textarea class="form-control" name="icerik" rows="-2"></textarea>
+							</div>
+						</form>
+						<button type="button" class="btn btn-primary">Gönder </button>
+					</div>
+				</div>
+
+				<center>	
+					<nav>
+						<ul class="pager">
+							<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Önceki Yazı</a></li>
+							<li class="next"><a href="#">Sonraki Yazı <span aria-hidden="true">&rarr;</span></a></li>
+						</ul>
+					</nav>
+				</center>
+				<footer  > 
+					<center>
+						<div style="color:white; align:center;  position: relative;margin: auto;">	
+							<p >Posted by: Hege Refsnes</p>
+							<p style="color:white;">Contact information: <a href="mailto:someone@example.com">
+								someone@example.com</a>.</p>
+							</div>
+						</center>
+					</footer> 
+				</div>
+
+
+
+
+
+
+
+
+			</div>
+			<!--son-->
+
+
+			<script language="javascript" src="http://is.sitekodlari.com/yukaricik1.js"></script>
+			<script src="js/jquery.js"></script>
+
+
+			<script src="js/bootstrap.min.js"></script>
+
+
+			<script>
+				$("#menu-toggle").click(function(e) {
+					e.preventDefault();
+
+					$("#wrapper").toggleClass("toggled");
+				});
+			</script>
+
+		</body>
+
+		</html>
