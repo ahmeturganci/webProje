@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -21,7 +24,11 @@
 
 
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" name="nick"><i class="fa fa-user"></i></b> <?php echo $giris_ses; ?> </a>
+                </li>
+            </ul>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -46,6 +53,9 @@
                     <li>
                         <a href="#"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
                     </li>
+                    <li>
+                        <a href="cikis.php"><i class="glyphicon glyphicon-cog" name="cikis"></i>  Çıkış  </a>
+                    </li>
 
                 </ul>
             </div>
@@ -66,7 +76,7 @@
               <div class="row">
                 <div class="col-lg-12">
                     <h1> Yazı Ekle</h1>
-                    <form method="post" action="index.php">
+                    <form method="post" action="yaziekle.php">
                         <div class="form-group">
                             <label>Başlık</label>
                             <input class="form-control" name="baslik">
@@ -78,10 +88,10 @@
 
                         <div class="form-group">
                             <label>Açıklama</label>
-                            <textarea class="form-control" name="icerik" rows="-2"></textarea>
+                            <textarea class="form-control" name="aciklama" rows="-2"></textarea>
                         </div>
+                        <button type="submit" class="btn btn-primary"> Yazı Ekle </button>
                     </form>
-                    <button type="button" class="btn btn-primary">Yazı Ekle </button>
 
 
                 </div>
