@@ -1,3 +1,20 @@
+<?php
+require_once("baglan.php");
+$yaziSayisi=5;
+$sql = mysqli_query($con,'SELECT COUNT(*) AS toplamYazi FROM yazi');
+$sonuc = mysqli_fetch_assoc($sql);
+$toplamYazi = $sonuc['toplamYazi'];
+
+$toplamSayfa = ceil($toplamYazi / $yaziSayisi);
+
+
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
+if($id<1) $id=1;
+if($id>$toplamSayfa) $id=$toplamSayfa;
+
+$limit=($id-1)*$yaziSayisi;
+?>
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -29,7 +46,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
+				<a class="navbar-brand" href="index.php">Yazılımdan Bi Haber </a>
 
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -42,6 +59,11 @@
 					</li>
 					<li>	
 						<a href="#" ><i class="fa fa-google"></i></b></a>
+					</li>
+					<li>
+						<li><a href="login.php"><?php session_start();
+						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
+						</li>
 					</li>
 				</ul>
 
@@ -71,22 +93,28 @@
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid">
-				<h1 class="page-header">
-					Yazılımdan Bir Haber <small>yazılımın içinden birinden haberler</small>
-				</h1>
+			<?php
+			$sql = mysqli_query($con,'SELECT * FROM yazi LIMIT ' . $limit . ', ' . $yaziSayisi);
+			while($sonuc = mysqli_fetch_assoc($sql)) {
+				$baslik=$sonuc['Baslik'];
+	//$icerik=$sonuc['icerik'];
+				$aciklama=$sonuc['Aciklama'];
+				$yazar=$sonuc['Yazar'];
+				$eklemetarihi=$sonuc['eklemeTarihi'];
+				echo '<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
-
-						<h1>baslik</h1>
-						<p><b>  Yazar : </b>yazar<b> Ekleme Tarihi :</b> eklemetarihi
-							<p>aciklama</p>
-							<button class="btn btn-primary">Devamını Oku . . .</button>
-						</div>
-					</div>
-					<hr>
+				<div class="col-lg-12">
+				<h1>'.$baslik.'</h1>
+				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
+				<p>'.$aciklama.'</p>
+				<button class="btn btn-primary">Devamını Oku . . .</button>
 				</div>
-			</div>
+				</div>
+				<hr>
+				</div>';
+			}
+			mysqli_close($con);
+			?>
 			<center>
 				<nav>
 					<ul class="pagination">
@@ -95,11 +123,11 @@
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						</li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
+						<?php 
+						for ($i=1; $i<=$toplamYazi ; $i++) { 
+							echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
+						}
+						?>
 						<li>
 							<a href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>

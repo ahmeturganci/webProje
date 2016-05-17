@@ -1,5 +1,11 @@
-<?php
-include('session.php');
+<?php 
+session_start();
+if(!isset($_SESSION['nick'])){
+}
+else
+{
+    $nick=$_SESSION['nick'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -26,7 +32,7 @@ include('session.php');
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" name="nick"><i class="fa fa-user"></i></b> <?php echo $giris_ses; ?> </a>
+                    <a href="#" name="nick"><i class="fa fa-user"></i></b> <?php echo $nick;?> </a>
                 </li>
             </ul>
             <div class="navbar-header">
