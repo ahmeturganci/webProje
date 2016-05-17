@@ -34,21 +34,23 @@
 </div>
 <?php
 require_once("baglan.php");
+session_start();
+if(isset($_SESSION['nick'])){
+  header("location: admin.php");
+}
 if($_POST){
-    $email=mysql_real_escape_string($_POST['email']);
-    $pass=mysql_real_escape_string($_POST['pass']);
-
+    $email=$_POST['email'];
+    $pass=$_POST['pass'];
+    $pass =md5($pass);
     $sql ="SELECT * FROM yazar WHERE Nick='$email'AND Parola='$pass'";//mail ve şifre kontrolü
     $sonuc=mysqli_query($con,$sql);
     if(mysqli_num_rows($sonuc)>0){
-        session_start();
-        $nick=$_SESSION['nick'];
-        $sql="SELECT * FROM yazar WHERE Nick='$nick'";
-        $sonuc =mysqli_query($con,$sql);
-        $row=mysqli_fetch_assoc($sonuc);
-        $giris_ses=$row['Nick'];
+//        $nick=$_SESSION['nick'];
+        //$sql="SELECT * FROM yazar WHERE Nick='$nick'";
+        //$sonuc =mysqli_query($con,$sql);
+        //$row=mysqli_fetch_assoc($sonuc);
         $_SESSION['nick']=$email;
-         header ("Location:admin.php"); // alert
+        header ("Location:admin.php"); // alert
      }
      else
         echo "basarisiz"; // alert

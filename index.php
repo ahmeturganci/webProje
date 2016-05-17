@@ -29,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
+				<a class="navbar-brand" href="index.php">Yazılımdan Bi Haber </a>
 
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -43,6 +43,9 @@
 					<li>	
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
+					<li>
+					<li><a href="login.php"><i class="glyphicon glyphicon-cog"></i>  Admin Giris</a></li>
+				</li>
 				</ul>
 
 				<ul class="nav navbar-nav side-nav">
