@@ -4,10 +4,7 @@ $yaziSayisi=5;
 $sql = mysqli_query($con,'SELECT COUNT(*) AS toplamYazi FROM yazi');
 $sonuc = mysqli_fetch_assoc($sql);
 $toplamYazi = $sonuc['toplamYazi'];
-
 $toplamSayfa = ceil($toplamYazi / $yaziSayisi);
-
-
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
 if($id<1) $id=1;
 if($id>$toplamSayfa) $id=$toplamSayfa;
@@ -35,7 +32,7 @@ $limit=($id-1)*$yaziSayisi;
 <body>
 
 	<div id="wrapper">
-		
+
 
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -54,10 +51,10 @@ $limit=($id-1)*$yaziSayisi;
 					<li class="dropdown">
 						<a href="#" ><i class="fa fa-facebook"></i></b></a>
 					</li>
-					<li>	
+					<li>
 						<a href="#" ><i class="fa fa-twitter"></i></b></a>
 					</li>
-					<li>	
+					<li>
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
@@ -94,10 +91,10 @@ $limit=($id-1)*$yaziSayisi;
 				</div>
 			</div>
 			<?php
-			$sql = mysqli_query($con,'SELECT * FROM yazi LIMIT ' . $limit . ', ' . $yaziSayisi);
-			while($sonuc = mysqli_fetch_assoc($sql)) {
+			$sql = mysqli_query($con,'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi);
+			while($sonuc=mysqli_fetch_assoc($sql)  ) {
 				$baslik=$sonuc['Baslik'];
-	//$icerik=$sonuc['icerik'];
+				//$icerik=$sonuc['icerik'];
 				$aciklama=$sonuc['Aciklama'];
 				$yazar=$sonuc['Yazar'];
 				$eklemetarihi=$sonuc['eklemeTarihi'];
@@ -107,7 +104,7 @@ $limit=($id-1)*$yaziSayisi;
 				<h1>'.$baslik.'</h1>
 				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
 				<p>'.$aciklama.'</p>
-				<button class="btn btn-primary">Devamını Oku . . .</button>
+				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
 				</div>
 				</div>
 				<hr>
@@ -115,6 +112,7 @@ $limit=($id-1)*$yaziSayisi;
 			}
 			mysqli_close($con);
 			?>
+		</div>
 			<center>
 				<nav>
 					<ul class="pagination">
@@ -123,12 +121,13 @@ $limit=($id-1)*$yaziSayisi;
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						</li>
-						<?php 
-						for ($i=1; $i<=$toplamYazi ; $i++) { 
+						<?php
+						for ($i=1; $i<=$toplamYazi ; $i++) {
 							echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
 						}
 						?>
 						<li>
+
 							<a href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 							</a>
@@ -137,13 +136,13 @@ $limit=($id-1)*$yaziSayisi;
 				</nav>
 			</center>
 			<footer  >  <center>
-				<div style="color:white; align:center;  position: relative;margin: auto;">  
+				<div style="color:white; align:center;  position: relative;margin: auto;">
 					<p >Hazırlayan: megau</p>
 					<p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
 						megau@gmail.com</a>.</p>
 					</div>
 				</center>
-			</footer> 
+			</footer>
 
 			<script src="js/jquery.js"></script>
 			<script src="js/bootstrap.min.js"></script>
