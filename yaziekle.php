@@ -18,7 +18,7 @@ if($_POST){
       $s++;
     }
 
-    if ($aciklama=="") {
+    elseif ($aciklama=="") {
       $hate=true;
       echo "<script>alert('Açıklama boş olamaz !');</script>";	 	
       $s++;
