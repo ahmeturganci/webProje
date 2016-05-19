@@ -25,10 +25,7 @@ else
 </head>
 
 <body>
-
     <div id="wrapper">
-
-
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -47,20 +44,23 @@ else
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="#"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+                    <li>
+                    	<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
                     </li>
                     <li>
-                        <a href="#"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
+                        <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
                     </li>
                     <li>
-                        <a href="#"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
+                        <a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
                     </li>
                     <li>
-                        <a href="#"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
+                        <a href="guncelle.php"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
                     </li>
                     <li>
-                        <a href="cikis.php"><i class="glyphicon glyphicon-cog" name="cikis"></i>  Çıkış  </a>
+                        <a href="ayarlar.php"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
+                    </li>
+                    <li>
+                        <a href="cikis.php"><i class="glyphicon glyphicon-log-out" name="cikis"></i>  Çıkış  </a>
                     </li>
 
                 </ul>
@@ -109,9 +109,9 @@ else
         </div>
 
         <footer  >  <center>
-            <div style="color:white; align:center;  position: relative;margin: auto;">  
-                <p >Hazırlayan: megau</p>
-                <p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
+            <div >  
+                <p>Hazırlayan: megau</p>
+                <p>İletişim İçin: <a href="mailto:megau@gmail.com">
                     megau@gmail.com</a>.</p>
                 </div>
             </center>

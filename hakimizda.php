@@ -75,26 +75,31 @@ require_once("baglan.php");
 				<div class="col-lg-12">
 					<div class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Çalışmalarımız </strong> 
+						<i class="fa fa-info-circle"></i>  <strong>Hakkımızda</strong> 
 					</div>
 				</div>
 			</div>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<h1>Mehmet Emin GELMEDİ</h1>
-						<p></p>
+						<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/074/1b6/0f8d7ec.jpg" class="img-responsive" height="148" width=" 148"><br>
+						<p>	Celal Bayar Yazılım Mühendisliği 2.Sınıf Öğrencisi.</p>
+						. . . 
 					</div>
-
-				</div>
-				<hr>
-				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<h1>Ahmet URGANCI</h1>
+						<img src="https://media.licdn.com/media/AAEAAQAAAAAAAAZ3AAAAJDQ0YzgxNGUwLWI2ZDMtNDcxMC05MWQ0LWYzNzhiMjM5YmMwNg.jpg" class="img-responsive"><br>
+						<p>	Celal Bayar Yazılım Mühendisliği 2.Sınıf Öğrencisi.</p>
+						<li>Grafik ve Tasarım</li>
+						<li>UI & UX</li>
+						<li>Oyun ve Oyun Tasarımı</li>
+						<li>JS</li>
 					</div>
 
 				</div>
 			</div>
+			<hr>
 			<footer  >  <center>
 				<div>
 					<p >Hazırlayan: megau</p>

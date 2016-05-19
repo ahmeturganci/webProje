@@ -57,9 +57,9 @@ if($_POST){
     <footer>
       <center>
 
-        <div style="color:white; align:center;  position: relative;margin: auto;">  
-          <p >Hazırlayan: megau</p>
-          <p style="color:white;">İletişim İçin: <a href="mailto:megau@gmail.com">
+        <div>  
+          <p>Hazırlayan: megau</p>
+          <p>İletişim İçin: <a href="mailto:megau@gmail.com">
             megau@gmail.com</a>.</p>
           </div>
         </center>

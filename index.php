@@ -97,7 +97,7 @@ $limit=($id-1)*$yaziSayisi;
 			</div>
 		</div>
 		<?php
-		$sql = 'SELECT * FROM yazi ORDER BY Id ASC LIMIT ' . $limit . ', ' . $yaziSayisi;
+		$sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
 		$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
 		if (!empty($sorgu) AND $sorgu->rowCount() > 0){
 			foreach( $sorgu as $sonuc ){
@@ -127,7 +127,7 @@ $limit=($id-1)*$yaziSayisi;
 			<ul class="pagination">
 				<!--bi üdahale lazım-->
 				<?php
-				for ($i=1; $i<=$toplamYazi/5 ; $i++) {
+				for ($i=1; $i<=$toplamYazi; $i+5) {
 					echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
 				}
 				?>

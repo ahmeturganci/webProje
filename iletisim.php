@@ -76,7 +76,7 @@ require_once("baglan.php");
 				<div class="col-lg-12">
 					<div class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Çalışmalarımız </strong> 
+						<i class="fa fa-info-circle"></i>  <strong>İletişim </strong> 
 					</div>
 				</div>
 			</div>
@@ -86,7 +86,6 @@ require_once("baglan.php");
 						<form action="mail.php" method="post">
 							İsminiz:<br/>
 							<input type="text" name="name" class="form-control"/><br/>
-
 							E-Posta adresiniz:<br/>
 							<input type="text" name="email" class="form-control"/><br/>
 							Konu:<br/>
@@ -99,19 +98,20 @@ require_once("baglan.php");
 
 				</div>
 			</div>
-			<footer  >  <center>
-				<div>
-					<p >Hazırlayan: megau</p>
-					<p>İletişim İçin: <a href="mailto:megau@gmail.com">
-						megau@gmail.com</a>.</p>
-					</div>
-				</center>
-			</footer>
+			<foote>r  
+				<center>
+					<div>
+						<p>Hazırlayan: megau</p>
+						<p>İletişim İçin: <a href="mailto:megau@gmail.com">
+							megau@gmail.com</a>.</p>
+						</div>
+					</center>
+				</footer>
 
-			<script src="js/jquery.js"></script>
-			<script src="js/bootstrap.min.js"></script>
+				<script src="js/jquery.js"></script>
+				<script src="js/bootstrap.min.js"></script>
 
 
-		</body>
+			</body>
 
-		</html>
+			</html>
