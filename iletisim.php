@@ -1,15 +1,5 @@
 <?php
 require_once("baglan.php");
-$yaziSayisi=5;
-$sql = mysqli_query($con,'SELECT COUNT(*) AS toplamYazi FROM yazi');
-$sonuc = mysqli_fetch_assoc($sql);
-$toplamYazi = $sonuc['toplamYazi'];
-$toplamSayfa = ceil($toplamYazi / $yaziSayisi);
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
-if($id<1) $id=1;
-if($id>$toplamSayfa) $id=$toplamSayfa;
-
-$limit=($id-1)*$yaziSayisi;
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +12,7 @@ $limit=($id-1)*$yaziSayisi;
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Yazılımdan Bi Haber - Anasayfa </title>
+	<title>Yazılımdan Bi Haber </title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
 	<link href="css/plugins/morris.css" rel="stylesheet">
@@ -38,7 +28,7 @@ $limit=($id-1)*$yaziSayisi;
 
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle 	</span>
+					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -49,7 +39,7 @@ $limit=($id-1)*$yaziSayisi;
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-right top-nav">
 					<li class="dropdown">
-						<a href="#	" ><i class="fa fa-facebook"></i></b></a>
+						<a href="#" ><i class="fa fa-facebook"></i></b></a>
 					</li>
 					<li>
 						<a href="#" ><i class="fa fa-twitter"></i></b></a>
@@ -59,13 +49,13 @@ $limit=($id-1)*$yaziSayisi;
 					</li>
 					<li>
 						<li><a href="login.php"><?php session_start();
-						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
+							if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 						</li>
 					</li>
 				</ul>
 
 				<ul class="nav navbar-nav side-nav">
-					<li>
+					<li >
 						<a href="index.php"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
 					</li>
 					<li>
@@ -75,7 +65,7 @@ $limit=($id-1)*$yaziSayisi;
 						<a href="hakimizda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
 					</li>
 					<li>
-						<a href="iletisim.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
+						<a href="iletisi.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
 					</li>
 
 				</ul>
@@ -86,46 +76,29 @@ $limit=($id-1)*$yaziSayisi;
 				<div class="col-lg-12">
 					<div class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Yazılımdan sende bi haber olmak istiyor isen </strong> Bizi Sosyal medya hesaplarımızdan takibe başla.
+						<i class="fa fa-info-circle"></i>  <strong>Çalışmalarımız </strong> 
 					</div>
 				</div>
 			</div>
-			<?php
-			$sql = mysqli_query($con,'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi);
-			while($sonuc=mysqli_fetch_assoc($sql)  ) {
-				$baslik=$sonuc['Baslik'];
-				//$icerik=$sonuc['icerik'];
-				$aciklama=$sonuc['Aciklama'];
-				$yazar=$sonuc['Yazar'];
-				$eklemetarihi=$sonuc['eklemeTarihi'];
-				echo '<div class="container-fluid">
+			<div class="container-fluid">
 				<div class="row">
-				<div class="col-lg-12">
-				<h1>'.$baslik.'</h1>
-				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
-				<p>'.$aciklama.'</p>
-				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
+					<div class="col-lg-12">
+						<form action="mail.php" method="post">
+							İsminiz:<br/>
+							<input type="text" name="name" class="form-control"/><br/>
+
+							E-Posta adresiniz:<br/>
+							<input type="text" name="email" class="form-control"/><br/>
+							Konu:<br/>
+							<input type="text" name="subject"vclass="form-control"/><br/>
+							Mesajınız:</br>
+							<textarea name="message" class="form-control"></textarea><br/>
+							<input type="submit" value="Gönder" class="form-control"/>
+						</form>
+					</div>
+
 				</div>
-				</div>
-				<hr>
-				</div>';
-			}
-			mysqli_close($con);
-			?>
-		</div>
-			<center>
-				<nav>
-					<ul class="pagination">
-						<!--bi üdahale lazım-->
-						<?php
-						for ($i=1; $i<=$toplamYazi ; $i++) {
-							echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
-						}
-						?>
-						
-					</ul>
-				</nav>
-			</center>
+			</div>
 			<footer  >  <center>
 				<div>
 					<p >Hazırlayan: megau</p>

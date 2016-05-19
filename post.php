@@ -54,7 +54,7 @@ require_once("baglan.php");
 				</ul>
 
 				<ul class="nav navbar-nav side-nav">
-					<li class="active">
+					<li>
 						<a href="#"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
 					</li>
 					<li>
