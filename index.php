@@ -1,17 +1,17 @@
 <?php
 require_once("baglan.php");
 $yaziSayisi=5;
-$sql = mysqli_query($con,'SELECT COUNT(*) AS toplamYazi FROM yazi');
-$sonuc = mysqli_fetch_assoc($sql);
+$sql = 'SELECT COUNT(*) AS toplamYazi FROM yazi';
+$sonuc = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
+if ($sonuc){
 $toplamYazi = $sonuc['toplamYazi'];
+}
 $toplamSayfa = ceil($toplamYazi / $yaziSayisi);
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
 if($id<1) $id=1;
 if($id>$toplamSayfa) $id=$toplamSayfa;
-
 $limit=($id-1)*$yaziSayisi;
 ?>
-
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -60,39 +60,41 @@ $limit=($id-1)*$yaziSayisi;
 					<li>
 						<li><a href="login.php"><?php session_start();
 						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
-						</li>
 					</li>
-				</ul>
+				</li>
+			</ul>
 
-				<ul class="nav navbar-nav side-nav">
-					<li>
-						<a href="index.php"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
-					</li>
-					<li>
-						<a href="calismalar.php"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
-					</li>
-					<li>
-						<a href="hakimizda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
-					</li>
-					<li>
-						<a href="iletisim.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
-					</li>
+			<ul class="nav navbar-nav side-nav">
+				<li>
+					<a href="index.php"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
+				</li>
+				<li>
+					<a href="calismalar.php"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
+				</li>
+				<li>
+					<a href="hakimizda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
+				</li>
+				<li>
+					<a href="iletisim.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
+				</li>
 
-				</ul>
-			</div>
-		</nav>
-		<div id="page-wrapper">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="alert alert-info alert-dismissable">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Yazılımdan sende bi haber olmak istiyor isen </strong> Bizi Sosyal medya hesaplarımızdan takibe başla.
-					</div>
+			</ul>
+		</div>
+	</nav>
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="alert alert-info alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<i class="fa fa-info-circle"></i>  <strong>Yazılımdan sende bi haber olmak istiyor isen </strong> Bizi Sosyal medya hesaplarımızdan takibe başla.
 				</div>
 			</div>
-			<?php
-			$sql = mysqli_query($con,'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi);
-			while($sonuc=mysqli_fetch_assoc($sql)  ) {
+		</div>
+		<?php
+		$sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
+		$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
+		if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+			foreach( $sorgu as $sonuc ){
 				$baslik=$sonuc['Baslik'];
 				//$icerik=$sonuc['icerik'];
 				$aciklama=$sonuc['Aciklama'];
@@ -110,35 +112,35 @@ $limit=($id-1)*$yaziSayisi;
 				<hr>
 				</div>';
 			}
-			mysqli_close($con);
-			?>
+		}
+			?>		
 		</div>
-			<center>
-				<nav>
-					<ul class="pagination">
-						<!--bi üdahale lazım-->
-						<?php
-						for ($i=1; $i<=$toplamYazi ; $i++) {
-							echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
-						}
-						?>
-						
-					</ul>
-				</nav>
+		<center>
+			<nav>
+				<ul class="pagination">
+					<!--bi üdahale lazım-->
+					<?php
+					for ($i=1; $i<=$toplamYazi ; $i++) {
+						echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
+					}
+					?>
+
+				</ul>
+			</nav>
+		</center>
+		<footer  >  <center>
+			<div>
+				<p >Hazırlayan: megau</p>
+				<p>İletişim İçin: <a href="mailto:megau@gmail.com">
+					megau@gmail.com</a>.</p>
+				</div>
 			</center>
-			<footer  >  <center>
-				<div>
-					<p >Hazırlayan: megau</p>
-					<p>İletişim İçin: <a href="mailto:megau@gmail.com">
-						megau@gmail.com</a>.</p>
-					</div>
-				</center>
-			</footer>
+		</footer>
 
-			<script src="js/jquery.js"></script>
-			<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 
 
-		</body>
+	</body>
 
-		</html>
+	</html>

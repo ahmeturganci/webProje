@@ -25,15 +25,22 @@ if($_POST){
 
    if(!$hata)
    {
-    $sql="INSERT INTO yazi(Baslik,Aciklama,Yazar,Icerik,eklemeTarihi) VALUES('$baslik','$aciklama','$yazar','$icerik','$eklemeTarihi')";
-    if(!mysqli_query($con,$sql)){
-     $sonuc_mesaj=mysqli_error($con);
-   }
-   else{
-    header ("Location:admin.php"); 
+    $sorgu = $db->prepare("INSERT INTO yazi SET
+      Baslik = ?,
+      Aciklama = ?,
+      Yazar = ?,
+      Icerik = ?,
+      eklemeTarihi = ?");
+    $ekle = $sorgu->execute(array(
+     $baslik,$aciklama,$yazar,$icerik,$eklemeTarihi
+     ));
+    if ($ekle){
+      $id = $db->lastInsertId();
+      $sonuc_mesaj= "insert işlemi başarılı!";
+       header ("Location:admin.php"); 
+    }
   }
-}
-echo $sonuc_mesaj;
+  echo $sonuc_mesaj;
 }
 
 

@@ -1,11 +1,11 @@
 <?php
-define('DB_NAME', 'blog');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_HOST', 'localhost');
-$con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-if (mysqli_connect_errno())
-  {
-  echo "Bağlanırken hata oluştu : " . mysqli_connect_error();
-  }
+try {
+$user='root';
+$pass='';
+$db = new PDO('mysql:host=localhost;dbname=blog;', $user, $pass);
+$db->exec("SET NAMES 'utf8'; SET CHARSET 'utf8'");
+} catch (PDOException $e) {
+    print "Hata!: " . $e->getMessage() . "<br/>";
+    die();
+}
 ?>
