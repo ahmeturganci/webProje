@@ -127,7 +127,7 @@ $limit=($id-1)*$yaziSayisi;
 			<ul class="pagination">
 				<!--bi üdahale lazım-->
 				<?php
-				for ($i=1; $i<=$toplamYazi; $i+5) {
+				for ($i=1; $i<=$toplamYazi/5; $i++) {
 					echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
 				}
 				?>
