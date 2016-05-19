@@ -1,5 +1,6 @@
 <?php
 require_once("baglan.php");
+session_start();
 $yaziSayisi=5;
 $sql = 'SELECT COUNT(*) AS toplamYazi FROM yazi';
 $sonuc = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
@@ -58,7 +59,7 @@ $limit=($id-1)*$yaziSayisi;
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php session_start();
+						<li><a href="login.php"><?php
 						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 					</li>
 				</li>
@@ -101,13 +102,14 @@ $limit=($id-1)*$yaziSayisi;
 				$aciklama=$sonuc['Aciklama'];
 				$yazar=$sonuc['Yazar'];
 				$eklemetarihi=$sonuc['eklemeTarihi'];
+				$_SESSION['id']=$id;
 				echo '<div class="container-fluid">
 				<div class="row">
 				<div class="col-lg-12">
 				<h1>'.$baslik.'</h1>
 				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
 				<p>'.$aciklama.'</p>
-				<button class="btn btn-primary"><a href="post.php?='.$id.'">Devamını Oku . . .</a></button>
+				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
 				</div>
 				</div>
 				<hr>

@@ -1,6 +1,9 @@
 <?php 	
 require_once("baglan.php");
- ?>
+session_start(); // session ile karsi taraftaki id verisi çekilerek post ekrana basıldı...
+$yaziId=$_SESSION['id'];
+echo '<script>alert("geldi '.$yaziId.'");</script>'; // duzeltilecek 
+?>
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -47,87 +50,87 @@ require_once("baglan.php");
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php session_start();
+						<li><a href="login.php"><?php
 						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
-						</li>
 					</li>
-				</ul>
+				</li>
+			</ul>
 
-				<ul class="nav navbar-nav side-nav">
-					<li>
-						<a href="#"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
-					</li>
-					<li>
-						<a href="#"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
-					</li>
-					<li>
-						<a href="#"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
-					</li>
-					<li>
-						<a href="#"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
-					</li>
+			<ul class="nav navbar-nav side-nav">
+				<li>
+					<a href="#"><i class="glyphicon glyphicon-dashboard"></i> Anasayfa</a>
+				</li>
+				<li>
+					<a href="#"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
+				</li>
+				<li>
+					<a href="#"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
+				</li>
+				<li>
+					<a href="#"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
+				</li>
 
-				</ul>
-			</div>
-		</nav>
-		<div id="page-wrapper">
+			</ul>
+		</div>
+	</nav>
+	<div id="page-wrapper">
 
-			<div class="container-fluid">
-				
-				<div class="row">
-					<div class="col-lg-12">
-						<h1>Github nedir? Nasıl Kullanılır?</h1>
-						<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
-							<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. 
-								Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Git ve Github kullanarak geliştirdiğiniz bir projeye farklı konumlardan farklı kişiler ekleyebilir, onlara görevler atayabilir ve yaptıkları işleri kontrol edebilirsiniz.
+		<div class="container-fluid">
 
-								Takım çalışması ve bireysel çalışmalarda etkin bir şekilde kullanılan yeni proje oluşturmak, projeye kişiler eklemek, kişilere görevler atamak, kişilerin analizlerini tutmak, ana projeyi değiştirmeden yeni kodları test etmek için dallar (branch) oluşturmak böylelikle çok daha kolay bir hale geliyor. Versiyon kontrollerini yapmak için release işlemlerini anlamak ve bir versiyon çıktığımızda, örneğin 1.0.0 ve çok fazla versiyon çıkıyorsak, bir süre sonra istediğimiz bir versiyona dönüp ordaki dosyada ve kodlarda değişiklikler yapabilir veya istediğiniz kod güncellemelerini de pratik bir şekilde yapabiliriz. </p>
-								<img src="	http://resim.sanalkurs.net/uploads/Screen_Shot_2014_02_05_at_162938.jpg">
-							</div>
-						</div>
-						<hr>	
-						<center>	
-						<h4>Yorum Ekle</h4>
-						</center>
-						<div class="row">
-							<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Github nedir? Nasıl Kullanılır?</h1>
+					<p><b>  Yazar : </b>Ahmet Urgancı <b> Ekleme Tarihi :</b>  14.05.2016 <b>Saat :</b> 12:55
+						<p>Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Github içinde bulunan açık kaynak çalışılan projelere (Pull request) yaparak projeye katılabilirsiniz. 
+							Günümüzün en popüler sürüm kontrol sistemi olan Git ve Github ile proje yönetimi artık çok kolay. Git ve Github kullanarak geliştirdiğiniz bir projeye farklı konumlardan farklı kişiler ekleyebilir, onlara görevler atayabilir ve yaptıkları işleri kontrol edebilirsiniz.
 
-								<form method="post" action="index.php">
-									<div class="form-group">
-										<label>Başlık</label>
-										<input class="form-control" name="baslik">
-									</div>
-									<div class="form-group">
-										<label>Mail</label>
-										<input class="form-control" name="baslik">
-									</div>
-
-									<div class="form-group">
-										<label>Yorum</label>
-										<textarea class="form-control" name="icerik" rows="-2"></textarea>
-									</div>
-								</form>
-								<button class="btn btn-primary">Gönder</button>
-							</div>
+							Takım çalışması ve bireysel çalışmalarda etkin bir şekilde kullanılan yeni proje oluşturmak, projeye kişiler eklemek, kişilere görevler atamak, kişilerin analizlerini tutmak, ana projeyi değiştirmeden yeni kodları test etmek için dallar (branch) oluşturmak böylelikle çok daha kolay bir hale geliyor. Versiyon kontrollerini yapmak için release işlemlerini anlamak ve bir versiyon çıktığımızda, örneğin 1.0.0 ve çok fazla versiyon çıkıyorsak, bir süre sonra istediğimiz bir versiyona dönüp ordaki dosyada ve kodlarda değişiklikler yapabilir veya istediğiniz kod güncellemelerini de pratik bir şekilde yapabiliriz. </p>
+							<img src="	http://resim.sanalkurs.net/uploads/Screen_Shot_2014_02_05_at_162938.jpg">
 						</div>
 					</div>
+					<hr>	
+					<center>	
+						<h4>Yorum Ekle</h4>
+					</center>
 					<div class="row">
-							<div class="col-lg-12">		
-					
-					<footer  >  
-						<center>
-							<div >  
-								<p >Hazırlayan: megau</p>
-								<p style="">İletişim İçin: <a href="mailto:megau@gmail.com">
-									megau@gmail.com</a>.</p>
+						<div class="col-lg-12">
+
+							<form method="post" action="index.php">
+								<div class="form-group">
+									<label>Başlık</label>
+									<input class="form-control" name="baslik">
 								</div>
-							</center>
-						</footer> 
+								<div class="form-group">
+									<label>Mail</label>
+									<input class="form-control" name="baslik">
+								</div>
 
-						<script src="js/jquery.js"></script>
-						<script src="js/bootstrap.min.js"></script>
+								<div class="form-group">
+									<label>Yorum</label>
+									<textarea class="form-control" name="icerik" rows="-2"></textarea>
+								</div>
+							</form>
+							<button class="btn btn-primary">Gönder</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">		
+
+						<footer  >  
+							<center>
+								<div >  
+									<p >Hazırlayan: megau</p>
+									<p style="">İletişim İçin: <a href="mailto:megau@gmail.com">
+										megau@gmail.com</a>.</p>
+									</div>
+								</center>
+							</footer> 
+
+							<script src="js/jquery.js"></script>
+							<script src="js/bootstrap.min.js"></script>
 
 
-					</body>
+						</body>
 
-					</html>
+						</html>
