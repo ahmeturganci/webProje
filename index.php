@@ -98,11 +98,16 @@ $limit=($id-1)*$yaziSayisi;
 			foreach( $sorgu as $sonuc ){
 				$id=$sonuc['Id'];
 				$baslik=$sonuc['Baslik'];
-				//$icerik=$sonuc['icerik'];
+				$icerik=$sonuc['Icerik'];
 				$aciklama=$sonuc['Aciklama'];
 				$yazar=$sonuc['Yazar'];
 				$eklemetarihi=$sonuc['eklemeTarihi'];
 				$_SESSION['id']=$id;
+				$_SESSION['baslik']=$baslik;
+				$_SESSION['icerik']=$icerik;
+				$_SESSION['yazar']=$yazar;
+				$_SESSION['aciklama']=$aciklama;
+				$_SESSION['et']=$eklemetarihi;
 				echo '<div class="container-fluid">
 				<div class="row">
 				<div class="col-lg-12">
