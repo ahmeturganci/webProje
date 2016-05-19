@@ -5,7 +5,7 @@ $yaziSayisi=5;
 $sql = 'SELECT COUNT(*) AS toplamYazi FROM yazi';
 $sonuc = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
 if ($sonuc){
-$toplamYazi = $sonuc['toplamYazi'];
+	$toplamYazi = $sonuc['toplamYazi'];
 }
 $toplamSayfa = ceil($toplamYazi / $yaziSayisi);
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
@@ -28,6 +28,11 @@ $limit=($id-1)*$yaziSayisi;
 	<link href="css/sb-admin.css" rel="stylesheet">
 	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	function Idgonder(id) {
+		javascript: location = "post.php?id="+id;
+	}
+	</script>
 </head>
 
 <body>
@@ -92,7 +97,7 @@ $limit=($id-1)*$yaziSayisi;
 			</div>
 		</div>
 		<?php
-		$sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
+		$sql = 'SELECT * FROM yazi ORDER BY Id ASC LIMIT ' . $limit . ', ' . $yaziSayisi;
 		$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
 		if (!empty($sorgu) AND $sorgu->rowCount() > 0){
 			foreach( $sorgu as $sonuc ){
@@ -102,53 +107,47 @@ $limit=($id-1)*$yaziSayisi;
 				$aciklama=$sonuc['Aciklama'];
 				$yazar=$sonuc['Yazar'];
 				$eklemetarihi=$sonuc['eklemeTarihi'];
-				$_SESSION['id']=$id;
-				$_SESSION['baslik']=$baslik;
-				$_SESSION['icerik']=$icerik;
-				$_SESSION['yazar']=$yazar;
-				$_SESSION['aciklama']=$aciklama;
-				$_SESSION['et']=$eklemetarihi;
 				echo '<div class="container-fluid">
 				<div class="row">
 				<div class="col-lg-12">
 				<h1>'.$baslik.'</h1>
 				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
 				<p>'.$aciklama.'</p>
-				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
+				<a class="btn btn-primary" onclick="Idgonder('.$id.');" >Devamını Oku. . .</a>
 				</div>
 				</div>
 				<hr>
 				</div>';
 			}
 		}
-			?>		
-		</div>
-		<center>
-			<nav>
-				<ul class="pagination">
-					<!--bi üdahale lazım-->
-					<?php
-					for ($i=1; $i<=$toplamYazi ; $i++) {
-						echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
-					}
-					?>
+		?>		
+	</div>
+	<center>
+		<nav>
+			<ul class="pagination">
+				<!--bi üdahale lazım-->
+				<?php
+				for ($i=1; $i<=$toplamYazi/5 ; $i++) {
+					echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
+				}
+				?>
 
-				</ul>
-			</nav>
+			</ul>
+		</nav>
+	</center>
+	<footer  >  <center>
+		<div>
+			<p >Hazırlayan: megau</p>
+			<p>İletişim İçin: <a href="mailto:megau@gmail.com">
+				megau@gmail.com</a>.</p>
+			</div>
 		</center>
-		<footer  >  <center>
-			<div>
-				<p >Hazırlayan: megau</p>
-				<p>İletişim İçin: <a href="mailto:megau@gmail.com">
-					megau@gmail.com</a>.</p>
-				</div>
-			</center>
-		</footer>
+	</footer>
 
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 
-	</body>
+</body>
 
-	</html>
+</html>

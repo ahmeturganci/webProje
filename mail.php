@@ -1,5 +1,5 @@
 <?php 
-if(isset($_POST['name') && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
+if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
 {
    if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['message']))
    {
@@ -7,12 +7,13 @@ if(isset($_POST['name') && isset($_POST['email']) && isset($_POST['subject']) &&
    }
    else
    {
-      $name    = strip_tags($_POST['name']);
+      $ad    = strip_tags($_POST['name']);
       $email   = strip_tags($_POST['email']);
-      $subject = strip_tags($_POST['subject']);
-      $message = strip_tags($_POST['message']);
-      $icerik  = 'İsim: ' .$name. '<br/>E-Mail: ' .$email. '<br/>'. $mesaj;
-      mail('aahmet.272@gmail.com', $subject, $icerik);
+      $konu = strip_tags($_POST['subject']);
+      $mesaj = strip_tags($_POST['message']);
+      $icerik  = 'İsim: ' .$ad. '<br/>E-Mail: ' .$email. '<br/>'. $mesaj;
+      $kime='aahmet.272@gmail.com';
+      //$mail =mail($kime, $konu, $mesaj, $icerik);// smtp port bulunan bir sunucuda çalıştırılması gerekli
       echo "Mesajınız başarı ile gönderildi.";
    }
 }
