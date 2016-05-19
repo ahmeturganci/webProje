@@ -1,22 +1,5 @@
 <?php
 require_once("baglan.php");
-$yaziSayisi=5;
-$sql = mysqli_query($con,'SELECT COUNT(*) AS toplamYazi FROM yazi');
-$sonuc = mysqli_fetch_assoc($sql);
-$toplamYazi = $sonuc['toplamYazi'];
-<<<<<<< HEAD
-
-$toplamSayfa = ceil($toplamYazi / $yaziSayisi);
-
-
-=======
-$toplamSayfa = ceil($toplamYazi / $yaziSayisi);
->>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
-if($id<1) $id=1;
-if($id>$toplamSayfa) $id=$toplamSayfa;
-
-$limit=($id-1)*$yaziSayisi;
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +62,7 @@ $limit=($id-1)*$yaziSayisi;
 						<a href="calismalar.php"><i class="glyphicon glyphicon-briefcase"></i>  Çalışmalar</a>
 					</li>
 					<li>
-						<a href="hakimizda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
+						<a href="hakkımızda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
 					</li>
 					<li>
 						<a href="iletisi.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
@@ -93,47 +76,42 @@ $limit=($id-1)*$yaziSayisi;
 				<div class="col-lg-12">
 					<div class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Yazılımdan sende bi haber olmak istiyor isen </strong> Bizi Sosyal medya hesaplarımızdan takibe başla.
+						<i class="fa fa-info-circle"></i>  <strong>Çalışmalarımız </strong> 
 					</div>
 				</div>
 			</div>
-			<?php
-<<<<<<< HEAD
-			$sql = mysqli_query($con,'SELECT * FROM yazi LIMIT ' . $limit . ', ' . $yaziSayisi);
-			while($sonuc = mysqli_fetch_assoc($sql)) {
-				$baslik=$sonuc['Baslik'];
-	//$icerik=$sonuc['icerik'];
-=======
-			$sql = mysqli_query($con,'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi);
-			while($sonuc=mysqli_fetch_assoc($sql)  ) {
-				$baslik=$sonuc['Baslik'];
-				//$icerik=$sonuc['icerik'];
->>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
-				$aciklama=$sonuc['Aciklama'];
-				$yazar=$sonuc['Yazar'];
-				$eklemetarihi=$sonuc['eklemeTarihi'];
-				echo '<div class="container-fluid">
+			<div class="container-fluid">
 				<div class="row">
 				<div class="col-lg-12">
-				<h1>'.$baslik.'</h1>
-				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
-				<p>'.$aciklama.'</p>
-<<<<<<< HEAD
-				<button class="btn btn-primary">Devamını Oku . . .</button>
-=======
-				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
->>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
+				<h1>Çalışmalarımız</h1>
+				<h2>MAYE çocuklar için kodlamaya merhaba</h2>
+				<p>
+					7-8 Mayıs 2016 tarihlerinde Korino Co-working Space'te, “Google Developers Days Hackingfest” adlı hackathon serisinin İzmir ayağında, Celal Bayar Üniversitesi, Hasan Ferdi Turgutlu Teknoloji Fakültesi, Yazılım Mühendisliği öğrencileri; Ahmet URGANCI, Ertuğrul ÜNGÖR, Mehmet Emin GELMEDİ ve Yasin DUVARCI 40 saat süresince uyumadan geliştirdikleri “Maye” isimli yazılım projeleriyle jüri tarafından puanlanarak 2.lik elde ettiler. Öğrencimizi kutlar, başarılarının devamını dileriz.
+					<p>Maye isimli projenin amacı küçük yaşlarda yazılım geliştirme ve kodlamaya meraklı çocuklar için HTML CSS JS gibi Web programlama dillerini çocukların severek ve eğlenerek öğrenmesini sağlamaktır. Bu amaçla basit bulmaca eşleştirme tabanlı bir Android yazılım projesi geliştirilmiştir.</p>
+				</p>
+				<img src="http://yazilimmuh.cbu.edu.tr/db_images/site_134/web/HackingFest.jpg" class="img-responsive">
+				<h3>Uygulamamızdan görüntüler</h3>
+				<div>
+					<img src="img/sunu.jpg" class="img-responsive">
+				</div>
+
 				</div>
 				</div>
 				<hr>
-				</div>';
-			}
-			mysqli_close($con);
-			?>
-<<<<<<< HEAD
-=======
+				<div class="row">
+				<div class="col-lg-12">
+				
+				<h2>MEGAU MP3 Player</h2>
+				<p>
+					Halen üzerşnde çalışmakta olduğumuz android plaformu için mp3 çalar
+				</p>
+				
+
+				</div>
+				</div>
+				</div>
+			
 		</div>
->>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
 			<center>
 				<nav>
 					<ul class="pagination">
@@ -142,16 +120,7 @@ $limit=($id-1)*$yaziSayisi;
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						</li>
-<<<<<<< HEAD
-						<?php 
-						for ($i=1; $i<=$toplamYazi ; $i++) { 
-=======
-						<?php
-						for ($i=1; $i<=$toplamYazi ; $i++) {
->>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
-							echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
-						}
-						?>
+						
 						<li>
 
 							<a href="#" aria-label="Next">

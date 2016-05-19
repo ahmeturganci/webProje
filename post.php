@@ -1,3 +1,6 @@
+<?php 	
+require_once("baglan.php");
+ ?>
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -29,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
+				<a class="navbar-brand" href="index.<?php  ?>">Yazılımdan Bi Haber </a>
 
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -42,6 +45,11 @@
 					</li>
 					<li>	
 						<a href="#" ><i class="fa fa-google"></i></b></a>
+					</li>
+					<li>
+						<li><a href="login.php"><?php session_start();
+						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
+						</li>
 					</li>
 				</ul>
 

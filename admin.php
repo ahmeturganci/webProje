@@ -42,7 +42,7 @@ else
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Yazılımdan Bi Haber </a>
+                <a class="navbar-brand" href="index.php">Yazılımdan Bi Haber </a>
 
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">

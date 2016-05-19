@@ -9,6 +9,7 @@ if($_POST){
 	$yazar=$_SESSION['nick'];
 	date_default_timezone_set('Europe/Istanbul');
 	$eklemeTarihi=date("d-m-Y H:i:s");
+<<<<<<< HEAD
 	
 	$sql="INSERT INTO yazi(Baslik,Aciklama,Yazar,Icerik,eklemeTarihi) VALUES('$baslik','$aciklama','$yazar','$icerik','$eklemeTarihi')";
 	if(!mysqli_query($con,$sql)){
@@ -19,7 +20,56 @@ if($_POST){
 		header ("Location:admin.php"); // alert
 	}
 	echo $sonuc_mesaj;
+=======
+	$hata = false;
+  $s=0;
+
+   	 if($baslik==""){// bos mu kontrolu
+   	 	$hata = true;
+   	 	echo "<script>alert('Baslık boş olamaz !');</script>";
+      $s++;
+    }
+
+    elseif ($aciklama=="") {
+      $hate=true;
+      echo "<script>alert('Açıklama boş olamaz !');</script>";	 	
+      $s++;
+    }
+    if ($icerik=="") {
+      $hate=true;
+      echo "<script>alert('İçerik boş geçilemez'); </script>";
+      $s++;
+    }
+    if ($s>0) {
+      
+     header ("refresh:0;url=admin.php"); //bu kadar oldu 
+     
+   }
+
+
+   if(!$hata)
+   {
+    $sql="INSERT INTO yazi(Baslik,Aciklama,Yazar,Icerik,eklemeTarihi) VALUES('$baslik','$aciklama','$yazar','$icerik','$eklemeTarihi')";
+    if(!mysqli_query($con,$sql)){
+     $sonuc_mesaj=mysqli_error($con);
+   }
+   else{
+    header ("Location:admin.php"); 
+  }
+}
+echo $sonuc_mesaj;
+>>>>>>> 94dfc3a89eede747f57646ff91fafe817d2ecac7
 }
 
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+
+</body >
+</html>

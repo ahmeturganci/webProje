@@ -53,7 +53,7 @@ if($_POST){
         header ("Location:admin.php"); // alert
      }
      else
-        echo "basarisiz"; // alert
+        echo '<script type="text/javascript">alert("Hatalı Giriş Tekrar Deneyimiz");</script>'; // alert
     mysqli_close($con);
 }
 ?>
@@ -69,6 +69,7 @@ if($_POST){
         </div>
     </center>
 </footer>
+
 </body>
 
 </html>
