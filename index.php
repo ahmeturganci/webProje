@@ -95,6 +95,7 @@ $limit=($id-1)*$yaziSayisi;
 		$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
 		if (!empty($sorgu) AND $sorgu->rowCount() > 0){
 			foreach( $sorgu as $sonuc ){
+				$id=$sonuc['Id'];
 				$baslik=$sonuc['Baslik'];
 				//$icerik=$sonuc['icerik'];
 				$aciklama=$sonuc['Aciklama'];
@@ -106,7 +107,7 @@ $limit=($id-1)*$yaziSayisi;
 				<h1>'.$baslik.'</h1>
 				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
 				<p>'.$aciklama.'</p>
-				<button class="btn btn-primary"><a href="post.php">Devamını Oku . . .</a></button>
+				<button class="btn btn-primary"><a href="post.php?='.$id.'">Devamını Oku . . .</a></button>
 				</div>
 				</div>
 				<hr>
