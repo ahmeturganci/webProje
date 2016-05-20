@@ -1,4 +1,5 @@
 <?php 
+require_once("baglan.php");
 session_start();
 if(!isset($_SESSION['nick'])){
 }
@@ -6,6 +7,22 @@ else
 {
     $nick=$_SESSION['nick'];
 }
+
+
+
+$yaziSayisi=10;
+$sql = 'SELECT COUNT(*) AS toplamYazi FROM yazi';
+$sonuc = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
+if ($sonuc){
+    $toplamYazi = $sonuc['toplamYazi'];
+}
+$toplamSayfa = ceil($toplamYazi / $yaziSayisi);
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
+if($id<1) $id=1;
+if($id>$toplamSayfa) $id=$toplamSayfa;
+$limit=($id-1)*$yaziSayisi;
+?>
+
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -43,9 +60,9 @@ else
 
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-               <ul class="nav navbar-nav side-nav">
+                <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+                    	<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
                     </li>
                     <li>
                         <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
@@ -79,51 +96,67 @@ else
                 </div>
             </div>
             <div class="container-fluid">
-                <h1 class="page-header">
-                  Admin Panel
-              </h1>
-              <div class="row">
-                <div class="col-lg-12">
-                    <h1> Yazı Ekle</h1>
-                    <form method="post" action="yaziekle.php">
-                        <div class="form-group">
-                            <label>Başlık</label>
-                            <input class="form-control" name="baslik">
-                        </div>
-                        <div class="form-group">
-                            <label>İçerik</label>
-                            <textarea class="form-control" name="icerik" rows="-2"></textarea>
-                        </div>
+                <div class="conrainer">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Baslık</th>
+                                <th>Açıklama</th>
+                                <th>Tarih</th>
+                                <th>İşlem</th>
 
-                        <div class="form-group">
-                            <label>Açıklama</label>
-                            <textarea class="form-control" name="aciklama" rows="-2"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary"> Yazı Ekle </button>
-                    </form>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
+                            $sorgu = $db->query($sql, PDO::FETCH_ASSOC);
+                            if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+                                foreach( $sorgu as $sonuc ){
+                                    $id=$sonuc['Id'];
+                                    $baslik=$sonuc['Baslik'];
+                                    $icerik=$sonuc['Icerik'];
+                                    $aciklama=$sonuc['Aciklama'];
+                                    $yazar=$sonuc['Yazar'];
+                                    $eklemetarihi=$sonuc['eklemeTarihi'];
 
+                                    echo '<tr>
+                                    <td>'.$baslik.'</td>
+                                    <td>'.$aciklama.'</td>
+                                    <td>'.$eklemetarihi.'</td>
+                                    <td><a class="btn btn-danger" >Sil</a></td>
+                                </tr>';
+                            }
+                        }
 
-                </div>
-                
-
+                        ?>
+                    </tbody>
+                </table>
             </div>
 
-
         </div>
+        <nav>
+            <ul class="pagination">
+                <!--bi üdahale lazım-->
+                <?php
+                for ($i=1; $i<=$toplamYazi; $i++) {
+                    echo "<li><a href='admin.php?id={$i}'>{$i}</a></li>";
+                }
+                ?>
 
-        <footer  >  <center>
-            <div >  
+            </ul>
+        </nav>
+
+        <footer>
+          <center>
+            <div>  
                 <p>Hazırlayan: megau</p>
                 <p>İletişim İçin: <a href="mailto:megau@gmail.com">
                     megau@gmail.com</a>.</p>
                 </div>
             </center>
         </footer> 
-
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
-
     </body>
-
     </html>

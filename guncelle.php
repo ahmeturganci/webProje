@@ -46,26 +46,30 @@ else
 
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav side-nav">
-                <li>
-                    <a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
-                </li>
-                <li>
-                    <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
-                </li>
-                <li>
-                    <a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
-                </li>
-                <li>
-                    <a href="guncelle.php"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
-                </li>
-                <li>
-                    <a href="ayarlar.php"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
-                </li>
-                <li>
-                    <a href="cikis.php"><i class="glyphicon glyphicon-log-out" name="cikis"></i>  Çıkış  </a>
-                </li>
-            </ul>
+            <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+                    </li>
+                    <li>
+                        <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+                    </li>
+                    <li>
+                        <a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
+                    </li>
+                    <li>
+                        <a href="yazilar.php"><i class="glyphicon glyphicon-list-alt"></i> Yazılar</a>
+                    </li>
+                    <li>
+                        <a href="guncelle.php"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
+                    </li>
+                    <li>
+                        <a href="ayarlar.php"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
+                    </li>
+                    <li>
+                        <a href="cikis.php"><i class="glyphicon glyphicon-log-out" name="cikis"></i>  Çıkış  </a>
+                    </li>
+
+                </ul>
         </div>
     </nav>
     <div id="page-wrapper">

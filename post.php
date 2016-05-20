@@ -101,9 +101,15 @@ $id=$_GET['id'];
 				<hr>';
 			}
 			?>	
-			<center>	
-				<h4>Yorum Ekle</h4>
-			</center>
+				
+			<div class="row">
+				<div class="col-lg-12">
+					<h4>Mail : <b>ÇekilenMail</b></h4>
+					<p><i>gelenyorum</i></p>
+				</div>
+			</div>
+			<h4>Yorum Ekle</h4>
+			
 			<div class="row">
 				<div class="col-lg-12">
 					<form method="post">
