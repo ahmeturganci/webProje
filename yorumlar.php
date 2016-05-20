@@ -7,8 +7,7 @@ else
 {
     $nick=$_SESSION['nick'];
 }
-
-$yorumSayisi=10;
+$yorumSayisi=5;
 $sql = 'SELECT COUNT(*) AS topYorum FROM yorum';
 $sonuc = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
 if ($sonuc){
@@ -19,7 +18,6 @@ $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
 if($id<1) $id=1;
 if($id>$toplamYorum ) $id=$toplamYorum ;
 $limit=($id-1)*$yorumSayisi;
-echo $yorumSayisi;
 
 ?>
 
@@ -41,9 +39,10 @@ echo $yorumSayisi;
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
     	function Idgonder(id) {
-          javascript: location = "sil.php?id="+id;
-      }
-  </script>
+            alert(id);
+            javascript: location = "yorumSil.php?id="+id;
+        }
+    </script>
 </head>
 
 <body>
@@ -96,7 +95,7 @@ echo $yorumSayisi;
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <i class="fa fa-info-circle"></i>  <strong>Admin hoşgeldin </strong>
+                        <i class="fa fa-info-circle"></i>  <strong>Yorumlar </strong>
                     </div>
                 </div>
             </div>
@@ -107,45 +106,52 @@ echo $yorumSayisi;
                             <tr>
                                 <th>Mail</th>
                                 <th>Yorum</th>
+                                <th>Tarih</th>
                                 <th>İşlem</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $sql ='SELECT * FROM yorum WHERE yaziId='.$id;
-                            $sorgu =$db->query($sql,PDO::FETCH_ASSOC);
+                            $sql = 'SELECT * FROM yorum ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yorumSayisi;
+                            $sorgu = $db->query($sql, PDO::FETCH_ASSOC);
                             if (!empty($sorgu) AND $sorgu->rowCount() > 0){
                                 foreach( $sorgu as $sonuc ){
-                                    $gelenMail=$sonuc['Mail'];
-                                    $gelenYorum=$sonuc['Yorum'];
-                                    $geleneklemeTarihi=$sonuc['eklemeTarihi'];
-                                    }
-                                    echo '<tr>
-                                    <td>'.$gelenMail.'</td>
-                                    <td>'.$gelenYorum.'</td>
-                                    <td><a class="btn btn-danger" onclick="Idgonder('.$id.');">Sil</a></td>
-                                </tr>';
-                                
-                            }
+                                 $id=$sonuc['Id'];
+                                 $gelenMail=$sonuc['Mail'];
+                                 $gelenYorum=$sonuc['Yorum'];
+                                 $geleneklemeTarihi=$sonuc['eklemeTarihi'];
+                                 
 
 
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
+                                 echo '<tr>
+                                 <td>'.$gelenMail.'</td>
+                                 <td>'.$gelenYorum.'</td>
+                                 <td>'.$geleneklemeTarihi.'</td>  
+                                 <td><a class="btn btn-danger" onclick="Idgonder('.$id.');">Sil</a></td>
+                             </tr>';
 
-                    </div>
-                   
-                    <footer>
-                      <center>
-                        <div>  
-                            <p>Hazırlayan: megau</p>
-                            <p>İletişim İçin: <a href="mailto:megau@gmail.com">
-                                megau@gmail.com</a>.</p>
-                            </div>
-                        </center>
-                    </footer> 
-                    <script src="js/jquery.js"></script>
-                    <script src="js/bootstrap.min.js"></script>
-                </body>
-                </html>
+                         }
+                     }
+
+
+                     ?>
+                 </tbody>
+             </table>
+         </div>
+
+     </div>
+
+     <footer>
+      <center>
+        <div>  
+            <p>Hazırlayan: megau</p>
+            <p>İletişim İçin: <a href="mailto:megau@gmail.com">
+                megau@gmail.com</a>.</p>
+            </div>
+        </center>
+    </footer> 
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
