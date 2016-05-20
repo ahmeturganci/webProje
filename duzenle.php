@@ -25,11 +25,6 @@ $id=@$_GET['id'];
 	<link href="css/sb-admin.css" rel="stylesheet">
 	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript">
-		function Idgonder(id) {
-			javascript: location = "guncel.php?id="+id;
-		}
-	</script>
 </head>
 
 <body>
@@ -53,7 +48,7 @@ $id=@$_GET['id'];
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li>
-						<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+						<a href="index.php"><i class="glyphicon glyphicon-home"></i> Site Görüntüle</a>
 					</li>
 					<li>
 						<a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
@@ -102,27 +97,41 @@ $id=@$_GET['id'];
 								;
 							}	
 							echo '
-							<form method="post" action="up()">
-								<div class="form-group">
-									<label>Başlık</label>
-									<input class="form-control" name="yeniBaslik" value="'.$baslik.'">
-								</div>
-								<div class="form-group">
-									<label>İçerik</label>
-									<textarea class="form-control" name="yeniicerik" rows="-2" >'.$icerik.'</textarea>
-								</div>
+							<form method="post">
+							<div class="form-group">
+							<label>Başlık</label>
+							<input class="form-control" name="yeniBaslik" value="'.$baslik.'">
+							</div>
+							<div class="form-group">
+							<label>İçerik</label>
+							<textarea class="form-control" name="yeniIcerik" rows="-2" >'.$icerik.'</textarea>
+							</div>
 
-								<div class="form-group">
-									<label>Açıklama</label>
-									<textarea class="form-control" name="yeniaciklama" rows="-2" >'.$aciklama.'</textarea>
-								</div>
-								<a class="btn btn-primary" onclick="Idgonder('.$id.');"> Güncelle </a>
+							<div class="form-group">
+							<label>Açıklama</label>
+							<textarea class="form-control" name="yeniAciklama" rows="-2" >'.$aciklama.'</textarea>
+							</div>
+							<button class="btn btn-primary"> Güncelle </button>
 							</form>
 							';
-
-
 						}
-						
+						if($_POST){
+							$yeniBaslik =$_POST['yeniBaslik'];
+							$yeniAciklama =$_POST['yeniAciklama'];
+							$yeniIcerik =$_POST['yeniIcerik'];
+							$sorgux = "UPDATE yazi SET Baslik='$yeniBaslik',Aciklama='$yeniAciklama',Icerik='$yeniIcerik' WHERE Id =".$id;
+
+							$sorgux = $db->query($sorgux, PDO::FETCH_ASSOC);
+						//echo '<script>alert("'.$yeniBaslik.'")</script>';
+							if (!empty($sorgux) AND $sorgux->rowCount() > 0){
+								echo '<script>alert("Başarılı bir şekilde")</script>';
+								header ("Location:guncelle.php?id=".$id);
+							}
+							else
+							{
+								echo 'Güncelleme işlemi başarısız';
+							}
+						}
 						?>
 					</div>
 				</div>
