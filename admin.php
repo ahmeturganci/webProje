@@ -45,7 +45,7 @@ else
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+                        <a href="index.php"><i class="glyphicon glyphicon-home"></i> Site Görüntüle</a>
                     </li>
                     <li>
                         <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>

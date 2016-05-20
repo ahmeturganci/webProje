@@ -100,71 +100,81 @@ $id=$_GET['id'];
 				</div>
 				<hr>';
 			}
-			?>	
-				
-			<div class="row">
-				<div class="col-lg-12">
-					<h4>Mail : <b>ÇekilenMail</b></h4>
-					<p><i>gelenyorum</i></p>
-				</div>
-			</div>
-			<h4>Yorum Ekle</h4>
+
+			$sql ='SELECT * FROM yorum WHERE yaziId='.$id;
+			$sorgu =$db->query($sql,PDO::FETCH_ASSOC);
+			if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+				foreach( $sorgu as $sonuc ){
+					$gelenMail=$sonuc['Mail'];
+					$gelenYorum=$sonuc['Yorum'];
+					$geleneklemeTarihi=$sonuc['eklemeTarihi'];
+
+					echo '<div class="row">
+					<div class="col-lg-12">
+					<h4>Mail : <b>'.$gelenMail.'</b></h4><p><i>'.$geleneklemeTarihi.'</i></p>
+					<p><i>'.$gelenYorum.'</i></p>
+					</div>
+					</div>
+					<hr/>';
+				}
+			}
 			
+			?>	
+			<h4>Yorum Ekle</h4>
 			<div class="row">
 				<div class="col-lg-12">
 					<form method="post">
-					<div class="form-group">
-						<label>Mail</label>
-						<input class="form-control" name="yorumEmail">
-					</div>
-
-					<div class="form-group">
-						<label>Yorum</label>
-						<textarea class="form-control" name="yorumYorum" rows="-2"></textarea>
-					</div>
-					<button name="yorumKaydet" class="btn btn-primary">Gönder</button>
-				</form>
-			</div>
-		</div>
-		<?php
-		if($_POST){
-			date_default_timezone_set('Europe/Istanbul');
-			$yorumeklemeTarihi=date("d-m-Y H:i:s");
-			$yorumEmail=$_POST['yorumEmail'];
-			$yorumYorum=$_POST['yorumYorum'];
-			$sorgu = $db->prepare("INSERT INTO yorum SET
-				yaziId = ?,
-				Mail = ?,
-				Yorum = ?,
-				eklemeTarihi = ?");
-			$ekle = $sorgu->execute(array(
-				$id,$yorumEmail,$yorumYorum,$yorumeklemeTarihi
-				));
-			if ($ekle){
-				$id = $db->lastInsertId();
-				echo "yorum eklendi";
-					//header ("Location:admin.php"); 
-			}
-		}
-		?>
-	</div>
-	<div class="row">
-		<div class="col-lg-12">		
-
-			<footer  >  
-				<center>
-					<div >  
-						<p >Hazırlayan: megau</p>
-						<p style="">İletişim İçin: <a href="mailto:megau@gmail.com">
-							megau@gmail.com</a>.</p>
+						<div class="form-group">
+							<label>Mail</label>
+							<input class="form-control" name="yorumEmail">
 						</div>
-					</center>
-				</footer> 
 
-				<script src="js/jquery.js"></script>
-				<script src="js/bootstrap.min.js"></script>
+						<div class="form-group">
+							<label>Yorum</label>
+							<textarea class="form-control" name="yorumYorum" rows="-2"></textarea>
+						</div>
+						<button name="yorumKaydet" class="btn btn-primary">Gönder</button>
+					</form>
+				</div>
+			</div>
+			<?php
+			if($_POST){
+				date_default_timezone_set('Europe/Istanbul');
+				$yorumeklemeTarihi=date("d-m-Y H:i:s");
+				$yorumEmail=$_POST['yorumEmail'];
+				$yorumYorum=$_POST['yorumYorum'];
+				$sorgu = $db->prepare("INSERT INTO yorum SET
+					yaziId = ?,
+					Mail = ?,
+					Yorum = ?,
+					eklemeTarihi = ?");
+				$ekle = $sorgu->execute(array(
+					$id,$yorumEmail,$yorumYorum,$yorumeklemeTarihi
+					));
+				if ($ekle){
+					header ("Location:post.php?id=".$id);
+					
+				}
+			}
+			?>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">		
+
+				<footer  >  
+					<center>
+						<div >  
+							<p >Hazırlayan: megau</p>
+							<p style="">İletişim İçin: <a href="mailto:megau@gmail.com">
+								megau@gmail.com</a>.</p>
+							</div>
+						</center>
+					</footer> 
+
+					<script src="js/jquery.js"></script>
+					<script src="js/bootstrap.min.js"></script>
 
 
-			</body>
+				</body>
 
-			</html>
+				</html>
