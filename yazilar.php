@@ -39,6 +39,11 @@ $limit=($id-1)*$yaziSayisi;
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/plugins/morris.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    	function Idgonder(id) {
+		javascript: location = "sil.php?id="+id;
+	}
+    </script>
 </head>
 
 <body>
@@ -124,7 +129,7 @@ $limit=($id-1)*$yaziSayisi;
                                     <td>'.$baslik.'</td>
                                     <td>'.$aciklama.'</td>
                                     <td>'.$eklemetarihi.'</td>
-                                    <td><a class="btn btn-danger" >Sil</a></td>
+                                    <td><a class="btn btn-danger" onclick="Idgonder('.$id.');">Sil</a></td>
                                 </tr>';
                             }
                         }
