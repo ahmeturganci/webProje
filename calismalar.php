@@ -47,7 +47,7 @@ require_once("baglan.php");
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php session_start();
+						<li><a href="giris.php"><?php session_start();
 							if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 						</li>
 					</li>

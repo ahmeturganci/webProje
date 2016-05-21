@@ -83,10 +83,10 @@ else
                             <input type="texr" name="baslik"  class="form-control" placeholder="Başlık" required autofocus>
                         </div>
                         <div class="form-group">
-                            <textarea type="text" name="email" class="form-control" name="icerik" rows="-2" placeholder="İçerik" required autofocus></textarea> 
+                            <textarea type="text" class="form-control" name="icerik" rows="-2" placeholder="İçerik" required autofocus></textarea> 
                         </div>
                         <div class="form-group">
-                            <textarea type="text" name="aciklama" class="form-control" name="icerik" rows="-2" placeholder="Açıklama" required autofocus></textarea> 
+                            <textarea type="text" name="aciklama" class="form-control" rows="-2" placeholder="Açıklama" required autofocus></textarea> 
                         </div>
                         <button type="submit" class="btn btn-primary"> Yazı Ekle </button>
                     </form>

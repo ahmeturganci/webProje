@@ -64,7 +64,7 @@ require_once("baglan.php");
 						<a href="hakimizda.php"><i class="glyphicon glyphicon-info-sign"></i>  Hakkımızda</a>
 					</li>
 					<li>
-						<a href="iletisi.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
+						<a href="iletisim.php"><i class="glyphicon glyphicon-phone"></i>  İletişim</a>
 					</li>
 
 				</ul>
@@ -87,7 +87,7 @@ require_once("baglan.php");
 							
 							<input type="text" name="name" class="form-control" placeholder="Ad"/><br/>
 							
-						     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Mail" required autofocus><br>	
+						     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Mail"><br>	
 							
 							<input type="text" name="subject" class="form-control" placeholder="Konu"/><br/>
 							

@@ -18,7 +18,7 @@ if($_POST){
       $s++;
     }
     if ($s>0) {
-     header ("refresh:0;url=admin.php"); //bu kadar oldu 
+     header ("refresh:0;url=yonetici.php"); //bu kadar oldu 
      
    }
 
@@ -37,7 +37,7 @@ if($_POST){
     if ($ekle){
       $id = $db->lastInsertId();
       $sonuc_mesaj= "insert işlemi başarılı!";
-       header ("Location:admin.php"); 
+       header ("Location:yonetici.php"); 
     }
   }
   echo $sonuc_mesaj;

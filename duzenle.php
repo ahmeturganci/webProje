@@ -36,7 +36,7 @@ $id=@$_GET['id'];
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<ul class="nav navbar-right top-nav">
 				<li class="dropdown">
-					<a href="#" name="nick"><i class="fa fa-user"></i></b> <?php echo $nick;?> </a>
+					<a href="yonetici.php" name="nick"><i class="fa fa-user"></i></b> <?php echo $nick;?> </a>
 				</li>
 			</ul>
 			<div class="navbar-header">

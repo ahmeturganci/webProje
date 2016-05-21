@@ -128,13 +128,13 @@ $id=$_GET['id'];
 			<form method="post">
 				<div class="form-group">
 					<label>Mail</label>
-					<input type="email" name="yorumEmail" id="inputEmail" class="form-control" placeholder="E-Mail" required autofocus>
+					<input type="email" name="yorumEmail" id="inputEmail" class="form-control" placeholder="E-Mail">
 				</div>
 
 				<div class="form-group">
 					<label>Yorum</label>
 					
-					<textarea type="email" name="yorumYorum" id="inputEmail" class="form-control" placeholder="Yorumunuz " required autofocus></textarea>
+					<textarea type="email" name="yorumYorum" id="inputEmail" class="form-control" placeholder="Yorumunuz"></textarea>
 
 				</div>
 				<button name="yorumKaydet" class="btn btn-primary">Gönder</button>
