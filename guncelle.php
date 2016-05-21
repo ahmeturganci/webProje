@@ -37,13 +37,13 @@ $limit=($id-1)*$yaziSayisi;
     <title>Yazılımdan Bi Haber </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/plugins/morris.css" rel="stylesheet">
+
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
     	function Idgonder(id) {
-		javascript: location = "duzenle.php?id="+id;
-	}
-    </script>
+          javascript: location = "duzenle.php?id="+id;
+      }
+  </script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@ $limit=($id-1)*$yaziSayisi;
                     	<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
                     </li>
                     <li>
-                        <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+                        <a href="yonetici.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
                     </li>
                     <li>
                         <a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
@@ -102,6 +102,7 @@ $limit=($id-1)*$yaziSayisi;
             </div>
             <div class="container-fluid">
                 <div class="conrainer">
+                <div class="row" style="background:#f1f1f1; padding: 20px;">
                     <table class="table">
                         <thead>
                             <tr>
@@ -138,9 +139,10 @@ $limit=($id-1)*$yaziSayisi;
                     </tbody>
                 </table>
             </div>
-
+</div>
         </div>
-        <nav>
+        <center> 
+           <nav>
             <ul class="pagination">
                 <!--bi üdahale lazım-->
                 <?php
@@ -151,17 +153,8 @@ $limit=($id-1)*$yaziSayisi;
 
             </ul>
         </nav>
-
-        <footer>
-          <center>
-            <div>  
-                <p>Hazırlayan: megau</p>
-                <p>İletişim İçin: <a href="mailto:megau@gmail.com">
-                    megau@gmail.com</a>.</p>
-                </div>
-            </center>
-        </footer> 
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-    </body>
-    </html>
+    </center>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

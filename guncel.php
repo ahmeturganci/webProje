@@ -1,15 +1,19 @@
 <?php 
 require_once("baglan.php");
 session_start();
+
+
 if(!isset($_SESSION['nick'])){
 }
 else
 {
 	$nick=$_SESSION['nick'];
 }
+
 $id=@$_GET['id'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -20,15 +24,10 @@ $id=@$_GET['id'];
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Düzenleme </title>
+	<title>Güncelleme</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript">
-		function Idgonder(id) {
-			javascript: location = "guncel.php?id="+id;
-		}
-	</script>
 </head>
 
 <body>
@@ -52,10 +51,10 @@ $id=@$_GET['id'];
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li>
-						<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+						<a href="index.php"><i class="glyphicon glyphicon-home"></i> Site Görüntüle</a>
 					</li>
 					<li>
-						<a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+						<a href="yonetici.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
 					</li>
 					<li>
 						<a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
@@ -81,53 +80,53 @@ $id=@$_GET['id'];
 				<div class="col-lg-12">
 					<div class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="fa fa-info-circle"></i>  <strong>Admin hoşgeldin </strong>
+						<i class="fa fa-info-circle"></i>  <strong>Yazı Güncelleme </strong>
 					</div>
 				</div>
 			</div>
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-						<?php 
+				<div class="container-fluid">
+					<?php 	
 
-						$sql = 'SELECT * FROM yazi WHERE Id='.$id;
+
+
+					$sql = 'SELECT * FROM yazi WHERE Id='.$id;
+					$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
+					if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+						foreach( $sorgu as $sonuc ){
+					;
+							$yeniBaslik=$sonuc['Baslik'];
+							$yeniIcerik=$sonuc['Icerik'];
+							$yeniAciklama=$sonuc['Aciklama'];
+
+								echo $id. ' '.$yeniAciklama.' '. $yeniBaslik;
+
+						}
+
+						echo '<script>alert("'.$yeniBaslik.'")</script>';
+						$sorgu = "UPDATE yazi SET Baslik='$yeniBaslik',Aciklama='$yeniAciklama',Icerik='$yeniIcerik' WHERE Id =".$id;
 						$sorgu = $db->query($sql, PDO::FETCH_ASSOC);
-						if (!empty($sorgu) AND $sorgu->rowCount() > 0){
-							foreach( $sorgu as $sonuc ){
-								$id=$sonuc['Id'];
-								$baslik=$sonuc['Baslik'];
-								$icerik=$sonuc['Icerik'];
-								$aciklama=$sonuc['Aciklama'];
-								;
-							}	
-							echo '
-							<form method="post" action="up()">
-								<div class="form-group">
-									<label>Başlık</label>
-									<input class="form-control" name="yeniBaslik" value="'.$baslik.'">
-								</div>
-								<div class="form-group">
-									<label>İçerik</label>
-									<textarea class="form-control" name="yeniicerik" rows="-2" >'.$icerik.'</textarea>
-								</div>
 
-								<div class="form-group">
-									<label>Açıklama</label>
-									<textarea class="form-control" name="yeniaciklama" rows="-2" >'.$aciklama.'</textarea>
-								</div>
-								<a class="btn btn-primary" onclick="Idgonder('.$id.');"> Güncelle </a>
-							</form>
-							';
+						echo '<script>alert("'.$yeniBaslik.'")</script>';
+						
+							if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+							echo '<script>alert("Başarılı bir şekilde")</script>';
+						}else{
+							echo 'Güncelleme işlemi başarısız';
 
 
 						}
-						
-						?>
-					</div>
-				</div>
+					}
 
-			</div>
-			<script src="js/jquery.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-		</body>
-		</html>
+
+					?>
+
+
+
+				</div>
+				<script src="js/jquery.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+
+
+			</body>
+			</html>

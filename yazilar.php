@@ -22,11 +22,8 @@ if($id<1) $id=1;
 if($id>$toplamSayfa) $id=$toplamSayfa;
 $limit=($id-1)*$yaziSayisi;
 ?>
-
-?>
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
 
     <meta charset="utf-8">
@@ -34,16 +31,16 @@ $limit=($id-1)*$yaziSayisi;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Yazılımdan Bi Haber </title>
+    <title>Yazılar</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/plugins/morris.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
     	function Idgonder(id) {
-		javascript: location = "sil.php?id="+id;
-	}
-    </script>
+          javascript: location = "sil.php?id="+id;
+      }
+  </script>
+
 </head>
 
 <body>
@@ -70,7 +67,7 @@ $limit=($id-1)*$yaziSayisi;
                     	<a href="index.php"><i class="glyphicon glyphicon-home"></i> Site Görüntüle</a>
                     </li>
                     <li>
-                        <a href="admin.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
+                        <a href="yonetici.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
                     </li>
                     <li>
                         <a href="yorumlar.php"><i class="glyphicon glyphicon-comment"></i>  Yorumlar</a>
@@ -96,71 +93,52 @@ $limit=($id-1)*$yaziSayisi;
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <i class="fa fa-info-circle"></i>  <strong>Admin hoşgeldin </strong>
+                        <i class="fa fa-info-circle"></i>  <strong>Yazılar </strong>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="conrainer">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Baslık</th>
-                                <th>Açıklama</th>
-                                <th>Tarih</th>
-                                <th>İşlem</th>
+                    <div class="row" style="background:#f1f1f1; padding: 20px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Baslık</th>
+                                    <th>Açıklama</th>
+                                    <th>Tarih</th>
+                                    <th>İşlem</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
-                            $sorgu = $db->query($sql, PDO::FETCH_ASSOC);
-                            if (!empty($sorgu) AND $sorgu->rowCount() > 0){
-                                foreach( $sorgu as $sonuc ){
-                                    $id=$sonuc['Id'];
-                                    $baslik=$sonuc['Baslik'];
-                                    $icerik=$sonuc['Icerik'];
-                                    $aciklama=$sonuc['Aciklama'];
-                                    $yazar=$sonuc['Yazar'];
-                                    $eklemetarihi=$sonuc['eklemeTarihi'];
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = 'SELECT * FROM yazi ORDER BY Id DESC LIMIT ' . $limit . ', ' . $yaziSayisi;
+                                $sorgu = $db->query($sql, PDO::FETCH_ASSOC);
+                                if (!empty($sorgu) AND $sorgu->rowCount() > 0){
+                                    foreach( $sorgu as $sonuc ){
+                                        $id=$sonuc['Id'];
+                                        $baslik=$sonuc['Baslik'];
+                                        $icerik=$sonuc['Icerik'];
+                                        $aciklama=$sonuc['Aciklama'];
+                                        $yazar=$sonuc['Yazar'];
+                                        $eklemetarihi=$sonuc['eklemeTarihi'];
 
-                                    echo '<tr>
-                                    <td>'.$baslik.'</td>
-                                    <td>'.$aciklama.'</td>
-                                    <td>'.$eklemetarihi.'</td>
-                                    <td><a class="btn btn-danger" onclick="Idgonder('.$id.');">Sil</a></td>
-                                </tr>';
+                                        echo '<tr>
+                                        <td>'.$baslik.'</td>
+                                        <td>'.$aciklama.'</td>
+                                        <td>'.$eklemetarihi.'</td>
+                                        <td><a class="btn btn-danger" onclick="Idgonder('.$id.');">Sil</a></td>
+                                    </tr>';
+                                }
                             }
-                        }
 
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-        <nav>
-            <ul class="pagination">
-                <!--bi üdahale lazım-->
-                <?php
-                for ($i=1; $i<=$toplamYazi; $i++) {
-                    echo "<li><a href='yazilar.php?id={$i}'>{$i}</a></li>";
-                }
-                ?>
-
-            </ul>
-        </nav>
-
-        <footer>
-          <center>
-            <div>  
-                <p>Hazırlayan: megau</p>
-                <p>İletişim İçin: <a href="mailto:megau@gmail.com">
-                    megau@gmail.com</a>.</p>
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
-            </center>
-        </footer> 
+            </div>
+        </div>
+
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>

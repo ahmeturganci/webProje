@@ -26,7 +26,6 @@ $limit=($id-1)*$yaziSayisi;
 	<title>Yazılımdan Bi Haber - Anasayfa </title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
-	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
 	function Idgonder(id) {
@@ -36,6 +35,7 @@ $limit=($id-1)*$yaziSayisi;
 </head>
 
 <body>
+
 
 	<div id="wrapper">
 
@@ -64,7 +64,7 @@ $limit=($id-1)*$yaziSayisi;
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php
+						<li><a href="giris.php"><?php
 						if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 					</li>
 				</li>
@@ -108,13 +108,15 @@ $limit=($id-1)*$yaziSayisi;
 				$yazar=$sonuc['Yazar'];
 				$eklemetarihi=$sonuc['eklemeTarihi'];
 				echo '<div class="container-fluid">
-				<div class="row">
+				<div class="row" style="background:#f1f1f1; padding: 20px;">
 				<div class="col-lg-12">
+				<p style="color:#888;"><i style="color:#E71D36;">  Yazar : </i>'.$yazar.'<i style="color:#E71D36;"> Ekleme Tarihi :</i> '.$eklemetarihi.'</p>
 				<h1>'.$baslik.'</h1>
-				<p><b>  Yazar : </b>'.$yazar.'<b> Ekleme Tarihi :</b> '.$eklemetarihi.'
 				<p>'.$aciklama.'</p>
-				<a class="btn btn-primary" onclick="Idgonder('.$id.');" >Devamını Oku. . .</a>
+				<a class="btn btn-primary" onclick="Idgonder('.$id.');" >Devamını Oku <i class="glyphicon glyphicon-chevron-right"></i></a>
+				
 				</div>
+
 				</div>
 				<hr>
 				</div>';
@@ -125,7 +127,7 @@ $limit=($id-1)*$yaziSayisi;
 	<center>
 		<nav>
 			<ul class="pagination">
-				<!--bi üdahale lazım-->
+				
 				<?php
 				for ($i=1; $i<=$toplamYazi/5; $i++) {
 					echo "<li><a href='index.php?id={$i}'>{$i}</a></li>";
@@ -146,7 +148,6 @@ $limit=($id-1)*$yaziSayisi;
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
 
 </body>
 

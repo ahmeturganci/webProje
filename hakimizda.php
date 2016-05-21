@@ -14,7 +14,6 @@ require_once("baglan.php");
 	<title>Yazılımdan Bi Haber </title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
-	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -47,7 +46,7 @@ require_once("baglan.php");
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php session_start();
+						<li><a href="giris.php"><?php session_start();
 							if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 						</li>
 					</li>
@@ -80,34 +79,36 @@ require_once("baglan.php");
 				</div>
 			</div>
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row" style="background:#f1f1f1; padding: 20px;">
 					<div class="col-lg-6">
 						<h1>Mehmet Emin GELMEDİ</h1>
 						<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/074/1b6/0f8d7ec.jpg" class="img-responsive" height="148" width=" 148"><br>
+						<a href="#" ><i class="fa fa-facebook"></i></a>
+						<a href="#" ><i class="fa fa-twitter"></i></a>
+						<a href="#" ><i class="fa fa-github"></i></a>
 						<p>	Celal Bayar Yazılım Mühendisliği 2.Sınıf Öğrencisi.</p>
-						. . . 
+						
+						
+
 					</div>
 					<div class="col-lg-6">
 						<h1>Ahmet URGANCI</h1>
 						<img src="https://media.licdn.com/media/AAEAAQAAAAAAAAZ3AAAAJDQ0YzgxNGUwLWI2ZDMtNDcxMC05MWQ0LWYzNzhiMjM5YmMwNg.jpg" class="img-responsive"><br>
+						<a href="#" ><i class="fa fa-facebook"></i></a>
+						<a href="http://www.twitter.com/bayyazilimci" ><i class="fa fa-twitter"></i></a>
+						<a href="http://www.github.com/ahmeturganci" ><i class="fa fa-github"></i></a>
 						<p>	Celal Bayar Yazılım Mühendisliği 2.Sınıf Öğrencisi.</p>
 						<li>Grafik ve Tasarım</li>
 						<li>UI & UX</li>
 						<li>Oyun ve Oyun Tasarımı</li>
 						<li>JS</li>
+						
 					</div>
 
 				</div>
 			</div>
 			<hr>
-			<footer  >  <center>
-				<div>
-					<p >Hazırlayan: megau</p>
-					<p>İletişim İçin: <a href="mailto:megau@gmail.com">
-						megau@gmail.com</a>.</p>
-					</div>
-				</center>
-			</footer>
+			
 
 			<script src="js/jquery.js"></script>
 			<script src="js/bootstrap.min.js"></script>

@@ -12,10 +12,9 @@ require_once("baglan.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Yazılımdan Bi Haber </title>
+	<title>Yazılımdan Bi Haber -  İletişim</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
-	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -48,7 +47,7 @@ require_once("baglan.php");
 						<a href="#" ><i class="fa fa-google"></i></b></a>
 					</li>
 					<li>
-						<li><a href="login.php"><?php session_start();
+						<li><a href="giris.php"><?php session_start();
 							if(isset($_SESSION['nick'])){$nick=$_SESSION['nick']; echo $nick.' ';} ?><i class="glyphicon glyphicon-cog"></i></a>
 						</li>
 					</li>
@@ -80,25 +79,25 @@ require_once("baglan.php");
 					</div>
 				</div>
 			</div>
+			<br><br>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
 						<form action="mail.php" method="post">
-							İsminiz:<br/>
-							<input type="text" name="name" class="form-control"/><br/>
-							E-Posta adresiniz:<br/>
-							<input type="text" name="email" class="form-control"/><br/>
-							Konu:<br/>
-							<input type="text" name="subject"vclass="form-control"/><br/>
-							Mesajınız:</br>
-							<textarea name="message" class="form-control"></textarea><br/>
-							<input type="submit" value="Gönder" class="form-control"/>
+							
+							<input type="text" name="name" class="form-control" placeholder="Ad"/><br/>
+							
+						     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Mail" required autofocus><br>	
+							
+							<input type="text" name="subject" class="form-control" placeholder="Konu"/><br/>
+							
+							<textarea name="message" class="form-control" placeholder="Mesajınız"></textarea><br/>
+							<button class="btn btn-primary">Gönder</button>
 						</form>
 					</div>
 
 				</div>
-			</div>
-			<foote>r  
+			</div><br><br><br><foote>
 				<center>
 					<div>
 						<p>Hazırlayan: megau</p>

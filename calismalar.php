@@ -15,7 +15,6 @@ require_once("baglan.php");
 	<title>Çalışmalarımız </title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sb-admin.css" rel="stylesheet">
-	<link href="css/plugins/morris.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -110,19 +109,8 @@ require_once("baglan.php");
 					</div>
 				</div>
 				<hr>
-				
 			</div>
-			
 		</div>
-		<footer  >  <center>
-			<div>
-				<p>Hazırlayan: megau</p>
-				<p>İletişim İçin: <a href="mailto:megau@gmail.com">
-					megau@gmail.com</a>.</p>
-				</div>
-			</center>
-		</footer>
-
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 
