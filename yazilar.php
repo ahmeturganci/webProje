@@ -79,9 +79,6 @@ $limit=($id-1)*$yaziSayisi;
                         <a href="guncelle.php"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
                     </li>
                     <li>
-                        <a href="ayarlar.php"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
-                    </li>
-                    <li>
                         <a href="cikis.php"><i class="glyphicon glyphicon-log-out" name="cikis"></i>  Çıkış  </a>
                     </li>
 

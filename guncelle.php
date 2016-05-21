@@ -67,7 +67,7 @@ $limit=($id-1)*$yaziSayisi;
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                    	<a href="index.php" class="glyphicon glyphicon-home"> Site Görüntüle</a>
+                    	<a href="index.php" ><i class="glyphicon glyphicon-home"></i> Site Görüntüle</a>
                     </li>
                     <li>
                         <a href="yonetici.php"><i class="glyphicon glyphicon-plus"></i> Yazı Ekle</a>
@@ -81,9 +81,7 @@ $limit=($id-1)*$yaziSayisi;
                     <li>
                         <a href="guncelle.php"><i class="glyphicon glyphicon-transfer"></i>  Güncellemeler</a>
                     </li>
-                    <li>
-                        <a href="ayarlar.php"><i class="glyphicon glyphicon-cog"></i>  Ayarlar  </a>
-                    </li>
+                   
                     <li>
                         <a href="cikis.php"><i class="glyphicon glyphicon-log-out" name="cikis"></i>  Çıkış  </a>
                     </li>
